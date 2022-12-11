@@ -1,10 +1,13 @@
 import streamlit
+import cv2
 import requests
 import pandas
 import snowflake.connector
 from urllib.error import URLError
 
-streamlit.title('Snow View')
+original_title = '<p style="font-family:Courier; color:Blue; font-size: 30px;">Snow View</p>'
+st.markdown(original_title, unsafe_allow_html=True)
+#streamlit.title('Snow View')
 #streamlit.header('Metadata Details')
 
 my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
