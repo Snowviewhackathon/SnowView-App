@@ -1,12 +1,23 @@
 import streamlit
-#import cv2
 import requests
 import pandas
 import snowflake.connector
 from urllib.error import URLError
 
-#original_title = '<p style="font-family:Courier; color:Blue; font-size: 30px;">Snow View</p>'
-#st.markdown(original_title, unsafe_allow_html=True)
+<style>
+p {
+ background-image: url(‘snowview_img1.jpg’);
+}
+</style>
+st.markdown(
+   f”””
+   <style>
+   p {
+   background-image: url(‘snowview_img1.jpg’);
+   }
+   </style>
+   ”””,
+   unsafe_allow_html=True)
 streamlit.title('Snow View')
 #streamlit.header('Metadata Details')
 
