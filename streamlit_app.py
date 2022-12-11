@@ -5,7 +5,7 @@ import snowflake.connector
 from urllib.error import URLError
 
 streamlit.title('Snow View')
-streamlit.header('Metadata Details')
+#streamlit.header('Metadata Details')
 
 my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
 my_cur = my_cnx.cursor()
