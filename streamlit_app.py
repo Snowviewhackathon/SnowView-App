@@ -4,11 +4,6 @@ import pandas
 import snowflake.connector
 from urllib.error import URLError
 
-<style>
-p {
- background-image: url(‘snowview_img1.jpg’);
-}
-</style>
 st.markdown(
    f”””
    <style>
