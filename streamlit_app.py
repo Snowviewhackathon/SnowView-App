@@ -4,15 +4,6 @@ import pandas
 import snowflake.connector
 from urllib.error import URLError
 
-st.markdown(
-   f”””
-   <style>
-   p {
-   background-image: url(‘snowview_img1.jpg’);
-   }
-   </style>
-   ”””,
-   unsafe_allow_html=True)
 streamlit.title('Snow View')
 #streamlit.header('Metadata Details')
 
