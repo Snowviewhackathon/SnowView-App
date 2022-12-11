@@ -1,5 +1,5 @@
 import streamlit
-import cv2
+#import cv2
 import requests
 import pandas
 import snowflake.connector
