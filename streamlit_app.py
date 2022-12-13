@@ -9,7 +9,8 @@ from urllib.error import URLError
 streamlit.title('Snow View')
 #streamlit.success('Snow View')
 #streamlit.markdown('Execution Details')
-st.markdown(f'<h1 style="color:#33ff33;font-size:24px;">{"ColorMeBlue text”"}</h1>', unsafe_allow_html=True)
+streamlit.markdown(f'<h1 style="color:#33ff33;font-size:24px;">{"ColorMeBlue text”"}</h1>', unsafe_allow_html=True)
+
 #img = image.open("snowview_img1.jpg");
 
 main_bg = "snowview_img1.jpg"
