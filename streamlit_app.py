@@ -2,6 +2,7 @@ import streamlit
 import requests
 import pandas
 import snowflake.connector
+import base64
 from urllib.error import URLError
 #from PIL import image
 
@@ -9,6 +10,20 @@ streamlit.title('Snow View')
 #streamlit.success('Snow View')
 streamlit.markdown('Execution Details')
 #img = image.open("snowview_img1.jpg");
+
+main_bg = "sample.jpg"
+main_bg_ext = "jpg"
+
+st.markdown(
+    f"""
+    <style>
+    .reportview-container {{
+        background: url(data:image/{main_bg_ext};base64,{base64.b64encode(open(main_bg, "rb").read()).decode()})
+    }}
+    </style>
+    """,
+    unsafe_allow_html=True
+)
 
 my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
 my_cur = my_cnx.cursor()
