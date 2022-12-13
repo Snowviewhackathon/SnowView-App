@@ -7,6 +7,7 @@ from urllib.error import URLError
 streamlit.title('Snow View')
 #streamlit.success('Snow View')
 streamlit.markdown('Execution Details')
+img = image.open("snowview_img1.jpg");
 
 my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
 my_cur = my_cnx.cursor()
