@@ -6,10 +6,11 @@ import base64
 from urllib.error import URLError
 #from PIL import image
 
-streamlit.title('Snow View')
+#streamlit.title('Snow View')
 #streamlit.success('Snow View')
 #streamlit.markdown('Execution Details')
-streamlit.markdown(f'<h1 style="color:#33ff33;font-size:24px;">{"ColorMeBlue text”"}</h1>', unsafe_allow_html=True)
+streamlit.markdown(f'<h1 style="color:#6495ED;font-size:32px;">{"Snow View text”"}</h1>', unsafe_allow_html=True)
+streamlit.markdown(f'<h1 style="color:#6495ED;font-size:24px;">{"Execution Details text”"}</h1>', unsafe_allow_html=True)
 
 #img = image.open("snowview_img1.jpg");
 
