@@ -4,8 +4,8 @@ import pandas
 import snowflake.connector
 from urllib.error import URLError
 
-streamlit.title('Snow View')
-streamlit.header('Execution Details')
+streamlit.header('Snow View')
+streamlit.subheader('Execution Details')
 
 my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
 my_cur = my_cnx.cursor()
