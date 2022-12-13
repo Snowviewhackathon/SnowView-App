@@ -11,17 +11,6 @@ from urllib.error import URLError
 #streamlit.markdown('Execution Details')
 streamlit.markdown(f'<h1 style="color:#1874CD;font-size:32px;">{"Snow View"}</h1>', unsafe_allow_html=True)
 streamlit.markdown(f'<h1 style="color:#6495ED;font-size:24px;">{"Execution Details"}</h1>', unsafe_allow_html=True)
-
-st.markdown(
-   f”””
-   <style>
-   p {
-   background-image: url(‘snowview_img1.jpg’);
-   }
-   </style>
-   ”””,
-   unsafe_allow_html=True)
-
 #img = image.open("snowview_img1.jpg");
 
 my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
