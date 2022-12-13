@@ -11,7 +11,7 @@ streamlit.title('Snow View')
 streamlit.markdown('Execution Details')
 #img = image.open("snowview_img1.jpg");
 
-main_bg = "sample.jpg"
+main_bg = "snowview_img1.jpg"
 main_bg_ext = "jpg"
 
 st.markdown(
