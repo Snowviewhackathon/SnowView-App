@@ -3,6 +3,7 @@ import requests
 import pandas
 import snowflake.connector
 from urllib.error import URLError
+from PIL import image
 
 streamlit.title('Snow View')
 #streamlit.success('Snow View')
