@@ -14,7 +14,7 @@ streamlit.markdown('Execution Details')
 main_bg = "snowview_img1.jpg"
 main_bg_ext = "jpg"
 
-st.markdown(
+streamlit.markdown(
     f"""
     <style>
     .reportview-container {{
