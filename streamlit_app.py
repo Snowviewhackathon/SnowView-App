@@ -3,12 +3,12 @@ import requests
 import pandas
 import snowflake.connector
 from urllib.error import URLError
-from PIL import image
+#from PIL import image
 
 streamlit.title('Snow View')
 #streamlit.success('Snow View')
 streamlit.markdown('Execution Details')
-img = image.open("snowview_img1.jpg");
+#img = image.open("snowview_img1.jpg");
 
 my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
 my_cur = my_cnx.cursor()
