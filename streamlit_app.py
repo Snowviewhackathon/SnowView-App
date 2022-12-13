@@ -20,5 +20,5 @@ my_cur.execute("SELECT PIPELINE_NAME,PIPELINE_EXECUTOR,PIPELINE_STATUS,PIPELINE_
 my_data_row = my_cur.fetchall()
 #columns = ('colm1','colm2','colm3','colm4','colm5','colm6','colm7','colm8')
 #columns=('col %d' % i for i in range(8)))
-#streamlit.dataframe(my_data_row) 
+#streamlit.dataframe(my_data_row)
 streamlit.table(my_data_row) 
