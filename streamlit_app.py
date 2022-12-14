@@ -25,7 +25,7 @@ a=df.style.set_properties(**{'border': '1.3px solid green','color': 'magenta'})
 page_bg_img = '''
 <style>
 body {
-background-image: url("https://images.unsplash.com/photo-1542281286-9e0a16bb7366");
+background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfTvsgwpq8OHUZHbVL9f2uSUmwSQ5bH688ypuRqwSSoh9x8tFRo1eqC6_lvzJ_g28wC5A&usqp=CAU");
 background-size: cover;
 }
 </style>
