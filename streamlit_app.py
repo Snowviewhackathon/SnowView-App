@@ -19,7 +19,7 @@ def set_bg_hack_url():
          f"""
          <style>
          .stApp {{
-             background: url("https://www.google.com/url?sa=i&url=https%3A%2F%2Ftowardsdatascience.com%2Fhow-to-set-up-a-snowflake-database-f9f6e1ca3cfb&psig=AOvVaw0RMIRXLdKbAt2MJXEMkbpP&ust=1671110236247000&source=images&cd=vfe&ved=0CBAQjRxqFwoTCKihm_OY-fsCFQAAAAAdAAAAABAF");
+             background: url("https://i.pinimg.com/originals/46/33/ae/4633ae1b0126d5d13e818aa69ddfe58e.jpg");
              background-size: cover
          }}
          </style>
