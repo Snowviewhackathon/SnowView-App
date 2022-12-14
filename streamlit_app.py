@@ -56,8 +56,9 @@ s=df.style.set_table_styles([
                             },
 
                        ])
+df= pd.DataFrame(s)
+streamlit.dataframe(df,3000,500)
 
-
-type(s)
-streamlit.table(s) 
+#type(s)
+#streamlit.table(s) 
 
