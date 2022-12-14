@@ -11,6 +11,19 @@ from urllib.error import URLError
 #streamlit.markdown('Snowflake Process : Execution Details')
 streamlit.markdown(f'<h1 style="color:#1874CD;font-size:40px;">{"Snow View"}</h1>', unsafe_allow_html=True)
 streamlit.markdown(f'<h1 style="color:#6495ED;font-size:24px;">{"Snowflake Process : Execution Details"}</h1>', unsafe_allow_html=True)
+streamlit.markdown(
+    """
+    <style>
+    .reportview-container {
+        background: url("https://images.app.goo.gl/LFCobouKtT7oZ7Qv7")
+    }
+   .sidebar .sidebar-content {
+        background: url("https://images.app.goo.gl/LFCobouKtT7oZ7Qv7")
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
 #img = image.open("snowview_img1.jpg");
 
 my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
@@ -22,15 +35,8 @@ df = pd.DataFrame(res, columns=['PIPELINE_NAME','PIPELINE_EXECUTOR','PIPELINE_ST
 #a=df.style.set_properties(**{'background-color': 'blue','color': 'black'})
 #a=df.style
 a=df.style.set_properties(**{'border': '1.3px solid green','color': 'magenta'})
-page_bg_img = '''
-<style>
-body {
-background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfTvsgwpq8OHUZHbVL9f2uSUmwSQ5bH688ypuRqwSSoh9x8tFRo1eqC6_lvzJ_g28wC5A&usqp=CAU");
-background-size: cover;
-}
-</style>
-'''
-streamlit.markdown(page_bg_img, unsafe_allow_html=True)
+
+#streamlit.markdown(page_bg_img, unsafe_allow_html=True)
 streamlit.table(a)
 
 #columns = ('colm1','colm2','colm3','colm4','colm5','colm6','colm7','colm8')
