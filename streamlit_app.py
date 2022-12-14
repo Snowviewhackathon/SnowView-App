@@ -43,7 +43,7 @@ my_cur.execute("SELECT PIPELINE_NAME,PIPELINE_EXECUTOR,PIPELINE_STATUS,PIPELINE_
 res = my_cur.fetchall()
 df= pd.DataFrame(res, columns=['PIPELINE_NAME','PIPELINE_EXECUTOR','PIPELINE_STATUS','PIPELINE_START_TIME','PIPELINE_END_TIME','PIPELINE_EXECUTION_TIME','CREDITS_CONSUMED_FOR_PIPELINE_EXECUTION','ERROR_DETAILS'])
 
-df=streamlit.dataframe(df,800,800)
+df=streamlit.dataframe(df,500,500)
 #a=df.style.set_properties(**{'border': '1.3px solid green','color': 'magenta'})
 ##s=df.style.set_table_styles([
 #                            {
@@ -55,7 +55,7 @@ df=streamlit.dataframe(df,800,800)
 #
 
 ##type(s)
-##streamlit.table(s,500,500) 
+##streamlit.table(s) 
 
 #columns = ('colm1','colm2','colm3','colm4','colm5','colm6','colm7','colm8')
 #columns=('col %d' % i for i in range(8)))
