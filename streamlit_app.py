@@ -45,7 +45,7 @@ df= pd.DataFrame(res, columns=['PIPELINE_NAME','PIPELINE_EXECUTOR','PIPELINE_STA
 
 df=streamlit.dataframe(df,1000,500)
 #a=df.style.set_properties(**{'border': '1.3px solid green','color': 'magenta'})
-s=df.style.set_table_styles([
+##s=df.style.set_table_styles([
                             {
                                 "selector":"thead",
                                 "props":"background-color:skyblue; color:white; border:1.3px solid black;"
@@ -54,8 +54,8 @@ s=df.style.set_table_styles([
                         ])
 
 
-type(s)
-#streamlit.table(s,500,500) 
+##type(s)
+##streamlit.table(s,500,500) 
 
 #columns = ('colm1','colm2','colm3','colm4','colm5','colm6','colm7','colm8')
 #columns=('col %d' % i for i in range(8)))
