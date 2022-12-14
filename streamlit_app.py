@@ -42,10 +42,17 @@ my_cur.execute("SELECT CURRENT_USER(), CURRENT_ACCOUNT(), CURRENT_REGION()")
 my_cur.execute("SELECT PIPELINE_NAME,PIPELINE_EXECUTOR,PIPELINE_STATUS,PIPELINE_START_TIME,PIPELINE_END_TIME,PIPELINE_EXECUTION_TIME,CREDITS_CONSUMED_FOR_PIPELINE_EXECUTION,ERROR_DETAILS FROM SNOWVIEW_AUDIT_VW")
 res = my_cur.fetchall()
 df = pd.DataFrame(res, columns=['PIPELINE_NAME','PIPELINE_EXECUTOR','PIPELINE_STATUS','PIPELINE_START_TIME','PIPELINE_END_TIME','PIPELINE_EXECUTION_TIME','CREDITS_CONSUMED_FOR_PIPELINE_EXECUTION','ERROR_DETAILS'])
-#a=df.style.set_properties(**{'background-color': 'blue','color': 'black'})
-#a=df.style
-a=df.style.set_properties(**{'border': '1.3px solid green','color': 'magenta'})
-streamlit.table(a) 
+#a=df.style.set_properties(**{'border': '1.3px solid green','color': 'magenta'})
+s=df.style.set_table_styles([
+                            {
+                                "selector":"thead",
+                                "props":"background-color:dodgerblue; color:white; border:3px solid red;"
+                            },
+
+                        ])
+
+type(s)
+streamlit.table(s) 
 #columns = ('colm1','colm2','colm3','colm4','colm5','colm6','colm7','colm8')
 #columns=('col %d' % i for i in range(8)))
 #streamlit.dataframe(my_data_row)
