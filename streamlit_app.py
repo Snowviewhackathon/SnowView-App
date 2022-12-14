@@ -45,19 +45,19 @@ df= pd.DataFrame(res, columns=['PIPELINE_NAME','PIPELINE_EXECUTOR','PIPELINE_STA
 
 #streamlit.dataframe(df,3000,500)
 #a=df.style.set_properties(**{'border': '1.3px solid green','color': 'magenta'})
-df.style.set_table_styles([
+s=df.style.set_table_styles([
                             {
                                "selector":"thead",
                                 "props":"background-color:skyblue; color:white; border:1.3px solid black;"
                             },
                              {
                                "selector":"td",
-                                "props":"background-color:skyblue; color:white; border:1.3px solid black;"
+                                "props":"background-color:lightyellow; color:black; border:1.3px solid black;"
                             },
 
                        ])
 
 
-#type(s)
-streamlit.table(df) 
+type(s)
+streamlit.table(s) 
 
