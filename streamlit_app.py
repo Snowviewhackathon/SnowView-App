@@ -21,7 +21,7 @@ res = my_cur.fetchall()
 df = pd.DataFrame(res, columns=['PIPELINE_NAME','PIPELINE_EXECUTOR','PIPELINE_STATUS','PIPELINE_START_TIME','PIPELINE_END_TIME','PIPELINE_EXECUTION_TIME','CREDITS_CONSUMED_FOR_PIPELINE_EXECUTION','ERROR_DETAILS'])
 #a=df.style.set_properties(**{'background-color': 'blue','color': 'black'})
 #a=df.style
-a=df.style.set_properties(**{'border': '1.3px solid green','color': 'magenta'} 
+a=df.style.set_properties(**{'border': '1.3px solid green','color': 'magenta'})
 page_bg_img = '''
 <style>
 body {
