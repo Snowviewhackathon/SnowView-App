@@ -42,16 +42,17 @@ my_cur.execute("SELECT CURRENT_USER(), CURRENT_ACCOUNT(), CURRENT_REGION()")
 my_cur.execute("SELECT PIPELINE_NAME,PIPELINE_EXECUTOR,PIPELINE_STATUS,PIPELINE_START_TIME,PIPELINE_END_TIME,PIPELINE_EXECUTION_TIME,CREDITS_CONSUMED_FOR_PIPELINE_EXECUTION,ERROR_DETAILS FROM SNOWVIEW_AUDIT_VW")
 res = my_cur.fetchall()
 df = pd.DataFrame(res, columns=['PIPELINE_NAME','PIPELINE_EXECUTOR','PIPELINE_STATUS','PIPELINE_START_TIME','PIPELINE_END_TIME','PIPELINE_EXECUTION_TIME','CREDITS_CONSUMED_FOR_PIPELINE_EXECUTION','ERROR_DETAILS'])
-#streamlit.dataframe(df,500,500)
+
+df1=streamlit.dataframe(df,500,500)
 #a=df.style.set_properties(**{'border': '1.3px solid green','color': 'magenta'})
-s=df.style.set_table_styles([
+s=df1.style.set_table_styles([
                             {
                                 "selector":"thead",
                                 "props":"background-color:skyblue; color:white; border:1.3px solid black;"
                             },
 
                         ])
-streamlit.dataframe(s,500,500)
+
 
 type(s)
 streamlit.table(s) 
