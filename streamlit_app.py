@@ -52,8 +52,9 @@ s=df.style.set_table_styles([
                         ])
 
 type(s)
-streamlit.table(s) 
 streamlit.table(a)
+streamlit.table(s) 
+
 #columns = ('colm1','colm2','colm3','colm4','colm5','colm6','colm7','colm8')
 #columns=('col %d' % i for i in range(8)))
 #streamlit.dataframe(my_data_row)
