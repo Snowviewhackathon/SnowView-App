@@ -21,8 +21,17 @@ res = my_cur.fetchall()
 df = pd.DataFrame(res, columns=['PIPELINE_NAME','PIPELINE_EXECUTOR','PIPELINE_STATUS','PIPELINE_START_TIME','PIPELINE_END_TIME','PIPELINE_EXECUTION_TIME','CREDITS_CONSUMED_FOR_PIPELINE_EXECUTION','ERROR_DETAILS'])
 #a=df.style.set_properties(**{'background-color': 'blue','color': 'black'})
 #a=df.style
-a=df.style.set_properties(**{'border': '1.3px solid green','color': 'magenta'})
-streamlit.table(a) 
+a=df.style.set_properties(**{'border': '1.3px solid green','color': 'magenta'} 
+page_bg_img = '''
+<style>
+body {
+background-image: url("https://images.unsplash.com/photo-1542281286-9e0a16bb7366");
+background-size: cover;
+}
+</style>
+'''
+streamlit.table(a)
+st.markdown(page_bg_img, unsafe_allow_html=True)
 #columns = ('colm1','colm2','colm3','colm4','colm5','colm6','colm7','colm8')
 #columns=('col %d' % i for i in range(8)))
 #streamlit.dataframe(my_data_row)
