@@ -31,7 +31,7 @@ background-size: cover;
 </style>
 '''
 streamlit.table(a)
-st.markdown(page_bg_img, unsafe_allow_html=True)
+streamlit.markdown(page_bg_img, unsafe_allow_html=True)
 #columns = ('colm1','colm2','colm3','colm4','colm5','colm6','colm7','colm8')
 #columns=('col %d' % i for i in range(8)))
 #streamlit.dataframe(my_data_row)
