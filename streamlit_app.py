@@ -46,7 +46,7 @@ df.style.set_properties(**{'border': '1.3px solid green','color': 'magenta'})
 s=df.style.set_table_styles([
                             {
                                 "selector":"thead",
-                                "props":"background-color:skyblue; color:white; border:black;"
+                                "props":"background-color:skyblue; color:white; border:1.3px solid black;"
                             },
 
                         ])
