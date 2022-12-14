@@ -54,7 +54,7 @@ streamlit.dataframe(df,3000,500)
 #                       ])
 #
 
-##type(s)
+#type(s)
 ##streamlit.table(s) 
 
 #columns = ('colm1','colm2','colm3','colm4','colm5','colm6','colm7','colm8')
