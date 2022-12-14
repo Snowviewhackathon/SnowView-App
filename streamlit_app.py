@@ -21,7 +21,7 @@ res = my_cur.fetchall()
 df = pd.DataFrame(res, columns=['PIPELINE_NAME','PIPELINE_EXECUTOR','PIPELINE_STATUS','PIPELINE_START_TIME','PIPELINE_END_TIME','PIPELINE_EXECUTION_TIME','CREDITS_CONSUMED_FOR_PIPELINE_EXECUTION','ERROR_DETAILS'])
 #a=df.style.set_properties(**{'background-color': 'blue','color': 'black'})
 #a=df.style
-a=df.style.background_gradient()
+a=df.style.set_properties(**{'border': '1.3px solid green','color': 'magenta'})
 streamlit.table(a) 
 #columns = ('colm1','colm2','colm3','colm4','colm5','colm6','colm7','colm8')
 #columns=('col %d' % i for i in range(8)))
