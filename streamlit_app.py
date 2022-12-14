@@ -1,6 +1,6 @@
 import streamlit
 import requests
-import pandas as pd
+import pandas
 import snowflake.connector
 import base64
 from urllib.error import URLError
@@ -17,9 +17,8 @@ my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
 my_cur = my_cnx.cursor() 
 my_cur.execute("SELECT CURRENT_USER(), CURRENT_ACCOUNT(), CURRENT_REGION()")
 my_cur.execute("SELECT PIPELINE_NAME,PIPELINE_EXECUTOR,PIPELINE_STATUS,PIPELINE_START_TIME,PIPELINE_END_TIME,PIPELINE_EXECUTION_TIME,CREDITS_CONSUMED_FOR_PIPELINE_EXECUTION,ERROR_DETAILS FROM SNOWVIEW_AUDIT_VW")
-res = my_cur.fetchall()
-df = pd.DataFrame(res)
-streamlit.table(df) 
+my_data_row = my_cur.fetchall()
 #columns = ('colm1','colm2','colm3','colm4','colm5','colm6','colm7','colm8')
 #columns=('col %d' % i for i in range(8)))
 #streamlit.dataframe(my_data_row)
+streamlit.table(my_data_row) 
