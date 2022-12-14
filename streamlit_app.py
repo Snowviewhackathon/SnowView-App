@@ -52,7 +52,7 @@ s=df.style.set_table_styles([
                             },
                             {
                                "selector":"table",
-                                "props":"width:100vw;"
+                                "props":"width:100%;"
                             },
 
                        ])
