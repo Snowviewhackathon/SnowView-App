@@ -20,7 +20,12 @@ my_cur.execute("SELECT PIPELINE_NAME,PIPELINE_EXECUTOR,PIPELINE_STATUS,PIPELINE_
 res = my_cur.fetchall()
 df = pd.DataFrame(res, columns=['PIPELINE_NAME','PIPELINE_EXECUTOR','PIPELINE_STATUS','PIPELINE_START_TIME','PIPELINE_END_TIME','PIPELINE_EXECUTION_TIME','CREDITS_CONSUMED_FOR_PIPELINE_EXECUTION','ERROR_DETAILS'])
 #a=df.style.set_properties(**{'background-color': 'blue','color': 'black'})
-a=df.style
+#a=df.style
+headers = {
+    'selector': 'th:not(.index_name)',
+    'props': 'background-color: #000066; color: white;'
+}
+a=df.set_table_styles([headers])
 streamlit.table(a) 
 #columns = ('colm1','colm2','colm3','colm4','colm5','colm6','colm7','colm8')
 #columns=('col %d' % i for i in range(8)))
