@@ -19,7 +19,7 @@ def set_bg_hack_url():
          f"""
          <style>
          .stApp {{
-             background: url("background.jpg");
+             background: url("https://github.com/Snowviewhackathon/SnowView-App/blob/main/background.jpg");
              background-size: cover
          }}
          </style>
