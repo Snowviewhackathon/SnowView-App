@@ -6,7 +6,7 @@ import base64
 from urllib.error import URLError
 #from PIL import image
 
-st.sidebar.markdown("# Page 2 ")
+streamlit.sidebar.markdown("# Page 2 ")
 def set_bg_hack_url():
     '''
     A function to unpack an image from url and set as bg.
