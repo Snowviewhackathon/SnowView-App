@@ -32,8 +32,8 @@ set_bg_hack_url()
 #streamlit.title('Snow View')
 #streamlit.success('Snow View')
 #streamlit.markdown('Snowflake Process : Execution Details')
-streamlit.markdown(f'<h1 style="color:#FFFFFF;font-size:48px;">{"❄️  Snow View"}</h1>', unsafe_allow_html=True)
-streamlit.markdown(f'<h1 style="color:#FFFFFF;font-size:24px;">{"     Snowflake Process : Execution Details"}</h1>', unsafe_allow_html=True)
+streamlit.markdown(f'<h1 style="color:#FFFFFF;font-size:48px;">{"❄️  SnowView"}</h1>', unsafe_allow_html=True)
+streamlit.markdown(f'<h1 style="color:#FFFFFF;font-size:24px;">{"Snowflake Process : Execution Details"}</h1>', unsafe_allow_html=True)
 #img = image.open("snowview_img1.jpg");
 
 my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
