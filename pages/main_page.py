@@ -4,7 +4,7 @@ import streamlit
 streamlit.sidebar.markdown("# Main page")
 
 #streamlit.markdown(f'<h1 style="color:white;font-size:40px;">{"Snow View❄️"}</h1>', unsafe_allow_html=True)
-streamlit.markdown("<h1 style='text-align: center; color: white;font-size:60px'>Snow View❄️</h1>", unsafe_allow_html=True)
+streamlit.markdown("<h1 style='text-align: center; color: white;font-size:100px'>Snow View❄️</h1>", unsafe_allow_html=True)
 
 #streamlit.markdown("<h1 style='text-align: center; color: red;'>Some title</h1>", unsafe_allow_html=True)
 
