@@ -19,7 +19,7 @@ def set_bg_hack_url():
          <style>
          .stApp {{
              #background: url("");
-             background-color: Lavender;
+             background-color: #86b6fd;
              background-size: cover
          }}
          </style>
@@ -33,7 +33,7 @@ set_bg_hack_url()
 #streamlit.success('Snow View')
 #streamlit.markdown('Snowflake Process : Execution Details')
 streamlit.markdown(f'<h1 style="color:#1874CD;font-size:40px;">{"Snow View"}</h1>', unsafe_allow_html=True)
-streamlit.markdown(f'<h1 style="color:#6495ED;font-size:24px;">{"Snowflake Process : Execution Details"}</h1>', unsafe_allow_html=True)
+streamlit.markdown(f'<h1 style="color:#1874CD;font-size:24px;">{"Snowflake Process : Execution Details"}</h1>', unsafe_allow_html=True)
 #img = image.open("snowview_img1.jpg");
 
 my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
@@ -48,7 +48,7 @@ df= pd.DataFrame(res, columns=['Pipeline Name','Pipeline Executor','Pipeline Sta
 s=df.style.set_table_styles([
                             {
                                "selector":"thead",
-                                "props":"font-weight:bold; color:#FF0000; background-color:Lavender; border:1.3px solid black;"
+                                "props":"font-weight:bold; color:#FF0000; background-color:#86b6fd; border:1.3px solid black;"
                             },
                             {
                                "selector":"td",
