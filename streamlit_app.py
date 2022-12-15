@@ -55,7 +55,7 @@ s=df.style.set_table_styles([
                                 "props":"border:1.3px solid black;"
                             },
                             {
-                               "selector":"index",
+                               "selector":"tindex",
                                 "props":"border:1.3px solid black;"
                             },
                             {
