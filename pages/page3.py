@@ -1,9 +1,9 @@
 import streamlit
-import requests
-import pandas as pd
+#import requests
+#import pandas as pd
 import snowflake.connector
-import base64
-from urllib.error import URLError
+#import base64
+#from urllib.error import URLError
 #from PIL import image
 
 
