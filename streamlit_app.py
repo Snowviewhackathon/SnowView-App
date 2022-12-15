@@ -1,68 +1,22 @@
-import streamlit
-import requests
-import pandas as pd
-import snowflake.connector
-import base64
-from urllib.error import URLError
-#from PIL import image
+import streamlit as st
 
+def main_page():
+    st.markdown("# Main page 🎈")
+    st.sidebar.markdown("# Main page 🎈")
 
-def set_bg_hack_url():
-    '''
-    A function to unpack an image from url and set as bg.
-    Returns
-    -------
-    The background.
-    '''
-    streamlit.markdown(
-         f"""
-         <style>
-         .stApp {{
-             #background: url("");
-             background-color: Lavender;
-             background-size: cover
-         }}
-         </style>
-         """,
-         unsafe_allow_html=True
-     )
-    
-set_bg_hack_url() 
+def page2():
+    st.markdown("# Page 2 ❄️")
+    st.sidebar.markdown("# Page 2 ❄️")
 
-#streamlit.title('Snow View')
-#streamlit.success('Snow View')
-#streamlit.markdown('Snowflake Process : Execution Details')
-streamlit.markdown(f'<h1 style="color:#1874CD;font-size:40px;">{"Snow View"}</h1>', unsafe_allow_html=True)
-streamlit.markdown(f'<h1 style="color:#6495ED;font-size:24px;">{"Snowflake Process : Execution Details"}</h1>', unsafe_allow_html=True)
-#img = image.open("snowview_img1.jpg");
+def page3():
+    st.markdown("# Page 3 🎉")
+    st.sidebar.markdown("# Page 3 🎉")
 
-my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
-my_cur = my_cnx.cursor() 
-my_cur.execute("SELECT CURRENT_USER(), CURRENT_ACCOUNT(), CURRENT_REGION()")
-my_cur.execute("SELECT PIPELINE_NAME,PIPELINE_EXECUTOR,PIPELINE_STATUS,PIPELINE_START_TIME,PIPELINE_END_TIME,PIPELINE_EXECUTION_TIME,CREDITS_CONSUMED_FOR_PIPELINE_EXECUTION,ERROR_DETAILS FROM SNOWVIEW_AUDIT_VW")
-res = my_cur.fetchall()
-df= pd.DataFrame(res, columns=['Pipeline Name','Pipeline Executor','Pipeline Status','Pipeline Start Time','Pipeline End Time','Pipeline Execution Time','Credits Consumed for Pipeline Execution','Error Details'])
+page_names_to_funcs = {
+    "Main Page": main_page,
+    "Page 2": page2,
+    "Page 3": page3,
+}
 
-#streamlit.dataframe(df,3000,1500)
-#a=df.style.set_properties(**{'border': '1.3px solid green','color': 'magenta'})
-s=df.style.set_table_styles([
-                            {
-                               "selector":"thead",
-                                "props":"font-weight:bold; color:#FF0000; background-color:White; border:1.3px solid black;"
-                            },
-                            {
-                               "selector":"td",
-                                "props":"font-size:11px"
-                            },
-                          
-                            {
-                               "selector":"stTable",
-                                "props":"width:100%;"
-                            },
-
-                       ])
-
-
-type(s)
-streamlit.table(s) 
-
+selected_page = st.sidebar.selectbox("Select a page", page_names_to_funcs.keys())
+page_names_to_funcs[selected_page]()
