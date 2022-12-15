@@ -48,8 +48,7 @@ df= pd.DataFrame(res, columns=['Pipeline Name','Pipeline Executor','Pipeline Sta
 s=df.style.set_table_styles([
                             {
                                "selector":"thead",
-                                "props":"font-weight:800; font-size:16px; color:#000000; background-color: PaleGreen; border:black;
-                                         font-family: "Inter", "system-ui", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"";
+                                "props":"font-weight:800; font-size:16px; color:#000000; background-color: PaleGreen; border:black; font-family: "Inter", "system-ui", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"";
                             },
                             {
                                "selector":"td",
