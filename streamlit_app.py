@@ -19,7 +19,7 @@ def set_bg_hack_url():
          f"""
          <style>
          .stApp {{
-             background: url("https://i.pinimg.com/564x/03/f5/14/03f5147b9a374dc1944495a66d1f256b.jpg");
+             background: "background.jpg";
              background-size: cover
          }}
          </style>
