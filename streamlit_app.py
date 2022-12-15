@@ -23,7 +23,7 @@ def main_page():
          unsafe_allow_html=True
      )
     #st.markdown("# Main page")
-    st.sidebar.markdown("# Main page")
+    #st.sidebar.markdown("# Main page")
 
 def page2():
     st.markdown("# Page 2")
