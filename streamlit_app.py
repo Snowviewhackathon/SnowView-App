@@ -20,7 +20,7 @@ def set_bg_hack_url():
          unsafe_allow_html=True
      )
     
-return set_bg_hack_url;
+set_bg_hack_url;
 
 def main_page(set_bg_hack_url):
     st.markdown("# Main page")
