@@ -20,7 +20,7 @@ def set_bg_hack_url():
          <style>
          .stApp {{
              background: url("data:background.jpg;base64,%s");
-             background-color: cyan;
+             background-color: greenyellow;
              background-size: cover
          }}
          </style>
