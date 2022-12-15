@@ -48,7 +48,7 @@ df= pd.DataFrame(res, columns=['Pipeline Name','Pipeline Executor','Pipeline Sta
 s=df.style.set_table_styles([
                             {
                                "selector":"thead",
-                                "props":"font-weight:bold; color:#FF0000; background-color:White; border:1.3px solid black;"
+                                "props":"font-weight:600; font-size: 20px; color:#2c2f34; background-color:MediumTurquoise; border:1.3px solid black;"
                             },
                             {
                                "selector":"td",
