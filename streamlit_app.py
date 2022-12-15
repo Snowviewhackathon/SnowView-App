@@ -7,32 +7,18 @@ from urllib.error import URLError
 #from PIL import image
 
 
-def set_bg_hack_url():
-    '''
-    A function to unpack an image from url and set as bg.
-    Returns
-    -------
-    The background.
-    '''
-    side_bg_ext = 'jpg'
-    path = 'background.jpg'
-    
-        
-    streamlit.markdown(
+ streamlit.markdown(
          f"""
          <style>
          .stApp {{
              background: url("data:image/side_bg_ext;base64,{base64.b64encode(open(path,"rb").read()).decode()});
-             #background-color: Lavender;
+             background-color: Lavender;
              background-size: cover
          }}
          </style>
          """,
          unsafe_allow_html=True
      )
-    
-set_bg_hack_url() 
-
 #streamlit.title('Snow View')
 #streamlit.success('Snow View')
 #streamlit.markdown('Snowflake Process : Execution Details')
