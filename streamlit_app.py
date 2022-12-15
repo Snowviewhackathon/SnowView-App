@@ -18,7 +18,7 @@ def set_bg_hack_url():
          f"""
          <style>
          .stApp {{
-             #background: url("data:image/side_bg_ext;base64,{base64.b64encode(open(path,"rb").read()).decode()});
+             #background: url("");
              background-color: Lavender;
              background-size: cover
          }}
