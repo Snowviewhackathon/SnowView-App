@@ -19,7 +19,7 @@ def set_bg_hack_url():
          <style>
          .stApp {{
              #background: url("");
-             background-color: #86b6fd;
+             background-color: #FFFFFF;
              background-size: cover
          }}
          </style>
@@ -48,7 +48,7 @@ df= pd.DataFrame(res, columns=['Pipeline Name','Pipeline Executor','Pipeline Sta
 s=df.style.set_table_styles([
                             {
                                "selector":"thead",
-                                "props":"font-weight:bold; color:#FF0000; background-color:#86b6fd; border:1.3px solid black;"
+                                "props":"font-weight:bold; color:#FF0000; background-color:#FFFFFF; border:1.3px solid black;"
                             },
                             {
                                "selector":"td",
