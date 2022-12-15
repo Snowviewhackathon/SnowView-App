@@ -56,8 +56,8 @@ s=df.style.set_table_styles([
                             },
                           
                             {
-                               "selector":"table",
-                                "props":"width:2000px;"
+                               "selector":"stTable",
+                                "props":"width:100%;"
                             },
 
                        ])
