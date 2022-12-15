@@ -14,13 +14,16 @@ def set_bg_hack_url():
     -------
     The background.
     '''
+    side_bg_ext = 'jpg'
+    path = 'background.jpg'
+    
         
     streamlit.markdown(
          f"""
          <style>
          .stApp {{
-             background: url("data:background.jpg;base64,%s");
-             background-color: Lavender;
+             background: url("data:image/side_bg_ext;base64,{base64.b64encode(open(path,"rb").read()).decode()});
+             #background-color: Lavender;
              background-size: cover
          }}
          </style>
