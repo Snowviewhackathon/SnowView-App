@@ -32,7 +32,7 @@ set_bg_hack_url()
 #streamlit.title('Snow View')
 #streamlit.success('Snow View')
 #streamlit.markdown('Snowflake Process : Execution Details')
-streamlit.markdown(f'<h1 style="color:#FFFFFF;font-size:48px;">{"❄️  SnowView"}</h1>', unsafe_allow_html=True)
+streamlit.markdown(f'<h1 style="color:#FFFFFF;font-size:48px;">{"❄️  SnowView  ❄️"}</h1>', unsafe_allow_html=True)
 streamlit.markdown(f'<h1 style="color:#FFFFFF;font-size:24px;">{"Snowflake Process : Execution Details"}</h1>', unsafe_allow_html=True)
 #img = image.open("snowview_img1.jpg");
 
@@ -48,7 +48,7 @@ df= pd.DataFrame(res, columns=['Pipeline Name','Pipeline Executor','Pipeline Sta
 s=df.style.set_table_styles([
                             {
                                "selector":"thead",
-                                "props":"font-weight:bold; color:#000000; background-color:#86b6fd; border:1.1px black;"
+                                "props":"font-weight:bold; color:#000000; background-color:#87CEEB; border:1.1px black;"
                             },
                             {
                                "selector":"td",
