@@ -50,6 +50,10 @@ s=df.style.set_table_styles([
                                "selector":"thead",
                                 "props":"background-color:LightSkyBlue; color:#FF0000; font-weight:bold; border:1.3px solid black;"
                             },
+                            {
+                               "selector":"td",
+                                "props":"font-size:50px"
+                            },
                           
                             {
                                "selector":"table",
