@@ -48,11 +48,11 @@ df= pd.DataFrame(res, columns=['PIPELINE_NAME','PIPELINE_EXECUTOR','PIPELINE_STA
 s=df.style.set_table_styles([
                             {
                                "selector":"thead",
-                                "props":"background-color:LightSkyBlue; color:#FF0000; font-weight:bold; border:1.3px solid black;"
+                                "props":"font-weight:bold; background-color:LightSkyBlue; color:#FF0000; border:1.3px solid black;"
                             },
                             {
                                "selector":"td",
-                                "props":"font-size:10px"
+                                "props":"font-size:11px"
                             },
                           
                             {
