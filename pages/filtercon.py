@@ -59,8 +59,8 @@ def filter_dataframe(df):
     with modification_container:
             to_filter_columns = st.multiselect("Filter dataframe on", df.columns)
             for column in to_filter_columns:
-            left, right = st.columns((1, 20))
-            left.write("↳")
+                left, right = st.columns((1, 20))
+                left.write("↳")
             if is_categorical_dtype(df['Pipeline Status']) or df['Pipeline Executor'].nunique() < 10:
                 user_cat_input = right.multiselect(
                     f"Values for {column}",
