@@ -74,5 +74,6 @@ def filter_dataframe(df):
                                                   )
                 if user_text_input:
                     df = df[df[column].astype(str).str.contains(user_text_input)]
+ filter_dataframe(df)
 
 st.dataframe(filter_dataframe(df))
