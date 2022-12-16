@@ -46,14 +46,14 @@ def filter_dataframe(df):
 
     # Try to convert datetimes into a standard format (datetime, no timezone)
     for col in df.columns:
-        if is_object_dtype(df[Pipeline Start Time]):
+        if is_object_dtype(df['Pipeline Start Time']):
             try:
-                df[col] = pd.to_datetime(df[Pipeline Start Time])
+                df[col] = pd.to_datetime(df['Pipeline Start Time'])
             except Exception:
                 pass
 
         if is_datetime64_any_dtype(df[col]):
-            df[col] = df[Pipeline Start Time].dt.tz_localize(None)
+            df[col] = df['Pipeline Start Time'].dt.tz_localize(None)
             
      modification_container = st.container()
      with modification_container:
@@ -61,13 +61,13 @@ def filter_dataframe(df):
             for column in to_filter_columns:
             left, right = st.columns((1, 20))
             left.write("↳")
-            if is_categorical_dtype(df[Pipeline Status]) or df[Pipeline Executor].nunique() < 10:
+            if is_categorical_dtype(df['Pipeline Status']) or df['Pipeline Executor'].nunique() < 10:
                 user_cat_input = right.multiselect(
                     f"Values for {column}",
-                    df[Pipeline Status].unique(),
-                    default=list(df[Pipeline Status].unique()),
+                    df['Pipeline Status'].unique(),
+                    default=list(df['Pipeline Status'].unique()),
                 )
-                df = df[df[Pipeline Status].isin(user_cat_input)]
+                df = df[df['Pipeline Status'].isin(user_cat_input)]
                 
             else:
                 user_text_input = right.text_input(f"Substring or regex in {column}",
