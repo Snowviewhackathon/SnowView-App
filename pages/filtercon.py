@@ -50,6 +50,7 @@ def filter_dataframe(df: pd.DataFrame) -> pd.DataFrame:
             to_filter_columns = st.multiselect("Filter dataframe on", df.columns)
             for column in to_filter_columns:
                 left, right = st.columns((1, 20))
+                print(left, right)
                 left.write("↳")
                 if is_categorical_dtype(df['Pipeline Status']) or df['Pipeline Executor'].nunique() < 10:
                     user_cat_input = right.multiselect(
