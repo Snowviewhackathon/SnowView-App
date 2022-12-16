@@ -56,8 +56,8 @@ def filter_dataframe(df: pd.DataFrame) -> pd.DataFrame:
                     f"Values for {column}",
                     df['Pipeline Status'].unique(),
                     default=list(df['Pipeline Status'].unique()),
-                )
-                df = df[df['Pipeline Status'].isin(user_cat_input)]
+                    )
+                    df = df[df['Pipeline Status'].isin(user_cat_input)]
                 else:
                     user_text_input = right.text_input(f"Substring or regex in {column}",
                                                   )
