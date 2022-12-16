@@ -55,8 +55,8 @@ def filter_dataframe(df):
         if is_datetime64_any_dtype(df[col]):
             df[col] = df['Pipeline Start Time'].dt.tz_localize(None)
             
-     modification_container = st.container()
-     with modification_container:
+    modification_container = st.container()
+    with modification_container:
             to_filter_columns = st.multiselect("Filter dataframe on", df.columns)
             for column in to_filter_columns:
             left, right = st.columns((1, 20))
@@ -68,11 +68,11 @@ def filter_dataframe(df):
                     default=list(df['Pipeline Status'].unique()),
                 )
                 df = df[df['Pipeline Status'].isin(user_cat_input)]
-                
+
             else:
                 user_text_input = right.text_input(f"Substring or regex in {column}",
                                                   )
                 if user_text_input:
                     df = df[df[column].astype(str).str.contains(user_text_input)]
-                    
+
 st.dataframe(filter_dataframe(df))
