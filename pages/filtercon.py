@@ -51,19 +51,18 @@ def filter_dataframe(df: pd.DataFrame) -> pd.DataFrame:
             for column in to_filter_columns:
                 left, right = st.columns((1, 20))
                 left.write("↳")
-            if is_categorical_dtype(df['Pipeline Status']) or df['Pipeline Executor'].nunique() < 10:
-                user_cat_input = right.multiselect(
+                if is_categorical_dtype(df['Pipeline Status']) or df['Pipeline Executor'].nunique() < 10:
+                    user_cat_input = right.multiselect(
                     f"Values for {column}",
                     df['Pipeline Status'].unique(),
                     default=list(df['Pipeline Status'].unique()),
                 )
                 df = df[df['Pipeline Status'].isin(user_cat_input)]
-
-            else:
-                user_text_input = right.text_input(f"Substring or regex in {column}",
+                else:
+                    user_text_input = right.text_input(f"Substring or regex in {column}",
                                                   )
-                if user_text_input:
-                    df = df[df[column].astype(str).str.contains(user_text_input)]
+                    if user_text_input:
+                        df = df[df[column].astype(str).str.contains(user_text_input)]
     return df
 
 my_cnx = snowflake.connector.connect(**st.secrets["snowflake"])
