@@ -1,6 +1,6 @@
 import streamlit as st
 import pandas as pd
-'''
+
 def dataframe():
     my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
     my_cur = my_cnx.cursor() 
@@ -9,7 +9,7 @@ def dataframe():
     res = my_cur.fetchall()
     df= pd.DataFrame(res, columns=['Pipeline Name','Pipeline Executor','Pipeline Status','Pipeline Start Time','Pipeline End Time','Pipeline Execution Time','Credits Consumed','Error Details'])
     
-    return df'''
+    return df
 
 
 def filter_dataframe(df: pd.DataFrame) -> pd.DataFrame:
