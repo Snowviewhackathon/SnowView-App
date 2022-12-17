@@ -43,12 +43,12 @@ def filter_dataframe(df: pd.DataFrame) -> pd.DataFrame:
                 left.write("↳")
                
                 if is_categorical_dtype(df['Pipeline Executor']) or df['Pipeline Executor'].nunique() < 10:
-                    user_cat_input = right.multiselect(
+                    user_input = right.multiselect(
                     f"Values for {column}",
                     df['Pipeline Executor'].unique(),
                     default=list(df['Pipeline Executor'].unique()),
                     )
-                    df = df[df['Pipeline Executor'].isin(user_cat_input)]
+                    df = df[df['Pipeline Executor'].isin(user_input)]
                 if is_categorical_dtype(df['Pipeline Status']) or df['Pipeline Status'].nunique() < 10:
                     user_cat_input = right.multiselect(
                     f"Values for {column}",
