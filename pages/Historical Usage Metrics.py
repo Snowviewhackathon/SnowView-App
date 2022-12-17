@@ -88,7 +88,8 @@ my_cur.execute("SELECT PIPELINE_NAME,PIPELINE_EXECUTOR,PIPELINE_STATUS,PIPELINE_
 res = my_cur.fetchall()
 df= pd.DataFrame(res, columns=['Pipeline Name','Pipeline Executor','Pipeline Status','Pipeline Start Time','Pipeline End Time','Pipeline Execution Time','Credits Consumed','Error Details'])
 st.markdown(f'<h1 style="color:#FFFFFF;font-size:48px;">{"❄️  SnowView"}</h1>', unsafe_allow_html=True)
-st.markdown(f'<h1 style="color:#FFFFFF;font-size:24px;">{"Snowflake Process : Complete History"}</h1>', unsafe_allow_html=True)    
+st.markdown(f'<h1 style="color:#FFFFFF;font-size:24px;">{"Snowflake Process : Complete History"}</h1>', unsafe_allow_html=True)  
+progress_bar = streamlit.sidebar.progress(0)  
 st.markdown(
      f"""
      <style>
@@ -102,3 +103,4 @@ st.markdown(
      unsafe_allow_html=True
  )
 st.dataframe(filter_dataframe(df))
+progress_bar.empty()
