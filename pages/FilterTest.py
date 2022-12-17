@@ -42,33 +42,37 @@ def filter_dataframe(df: pd.DataFrame) -> pd.DataFrame:
                 left, right = st.columns((1, 20))
                 left.write("↳")
                
-                if is_categorical_dtype(df['Pipeline Executor']) or df['Pipeline Executor'].nunique() < 10:
-                    user_input = right.multiselect(
-                    f"Values for {column}",
-                    df['Pipeline Executor'].unique(),
-                    default=list(df['Pipeline Executor'].unique()),
+                if is_categorical_dtype(df[column]) or df[column].nunique() < 10:
+                    user_cat_input = right.multiselect(
+                        f"Values for {column}",
+                        df[column].unique(),
+                        default=list(df[column].unique()),
                     )
-                    df = df[df['Pipeline Executor'].isin(user_input)]
-                    
-                if is_categorical_dtype(df['Pipeline Status']) or df['Pipeline Status'].nunique() < 10:
-                    user_input = right.multiselect(
-                    f"Values for {column}",
-                    df['Pipeline Status'].unique(),
-                    default=list(df['Pipeline Status'].unique()),
+                    df = df[df[column].isin(user_cat_input)]
+                elif is_numeric_dtype(df[column]):
+                    _min = float(df[column].min())
+                    _max = float(df[column].max())
+                    step = (_max - _min) / 100
+                    user_num_input = right.slider(
+                        f"Values for {column}",
+                        min_value=_min,
+                        max_value=_max,
+                        value=(_min, _max),
+                        step=step,
                     )
-                    df = df[df['Pipeline Status'].isin(user_input)]
-                elif is_datetime64_any_dtype(df['Pipeline Start Time']):
+                    df = df[df[column].between(*user_num_input)]
+                elif is_datetime64_any_dtype(df[column]):
                     user_date_input = right.date_input(
                         f"Values for {column}",
                         value=(
-                            df['Pipeline Start Time'].min(),
-                            df['Pipeline Start Time'].max(),
+                            df[column].min(),
+                            df[column].max(),
                         ),
                     )
                     if len(user_date_input) == 2:
                         user_date_input = tuple(map(pd.to_datetime, user_date_input))
                         start_date, end_date = user_date_input
-                        df = df.loc[df['Pipeline Start Time'].between(start_date, end_date)]
+                        df = df.loc[df[column].between(start_date, end_date)]
                 else:
                     user_text_input = right.text_input(f"Substring or regex in {column}",
                                                   )
