@@ -17,13 +17,13 @@ with modification_container:
      )
     
     streamlit.markdown(
-        """
-    <style>
-    .sidebar .sidebar-content {
-        background-image: linear-gradient(#2e7bcf,#2e7bcf);
-        color: white;
-    }
-    </style>
-    """,
+         f"""
+         <style>
+         .sidebar .sidebar-content {
+            background-image: linear-gradient(#2e7bcf,#2e7bcf);
+            color: black;
+         }
+         </style>
+         """,
         unsafe_allow_html=True,
     )
