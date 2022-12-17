@@ -20,7 +20,8 @@ def filter_dataframe(df: pd.DataFrame) -> pd.DataFrame:
     modify = st.checkbox("Add filters")
 
     if not modify:
-        return df 
+        df1=df.head(15)
+        return df1 
     
     df = df.copy()
 
