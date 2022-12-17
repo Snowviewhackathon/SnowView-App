@@ -90,5 +90,5 @@ df= pd.DataFrame(res, columns=['Pipeline Name','Pipeline Executor','Pipeline Sta
     
 
 
-st.dataframe(filter_dataframe(df.head(15)))
+st.dataframe(filter_dataframe(df))
 
