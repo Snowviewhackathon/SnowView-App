@@ -37,19 +37,19 @@ def filter_dataframe(df: pd.DataFrame) -> pd.DataFrame:
             
     modification_container = st.container()
     with modification_container:
-            to_filter_columns = st.multiselect("Filter dataframe on", df.columns)
+            to_filter_columns = st.multiselect("Filter dataframe on", df.columns[[1,2]])
             for column in to_filter_columns:
                 left, right = st.columns((1, 20))
                 left.write("↳")
                
-                if is_categorical_dtype(df.loc[(df['Pipeline Executor']) & (df['Pipeline Status'])]) or (df.loc[(df['Pipeline Executor']) & (df['Pipeline Status'])]).nunique() < 10:
+                if is_categorical_dtype(df['Pipeline Executor']) or df['Pipeline Executor'].nunique() < 10:
                     user_cat_input = right.multiselect(
                     f"Values for {column}",
                     df['Pipeline Executor'].unique(),
                     default=list(df['Pipeline Executor'].unique()),
                     )
                     df = df[df['Pipeline Executor'].isin(user_cat_input)]
-                elif is_categorical_dtype(df['Pipeline Status']) or df['Pipeline Status'].nunique() < 10:
+                if is_categorical_dtype(df['Pipeline Status']) or df['Pipeline Status'].nunique() < 10:
                     user_cat_input = right.multiselect(
                     f"Values for {column}",
                     df['Pipeline Status'].unique(),
