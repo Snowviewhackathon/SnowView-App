@@ -2,7 +2,6 @@ import streamlit
 import pandas as pd
 import snowflake.connector
 
-streamlit.sidebar.markdown("# Page 2 ")
 streamlit.markdown(
      f"""
      <style>
