@@ -19,9 +19,10 @@ with modification_container:
     streamlit.markdown(
          f"""
          <style>
-         .sidebar .sidebar-content {
-            background-image: linear-gradient(#2e7bcf,#2e7bcf);
-            color: black;
+         .sidebar .css-1aumxhk {
+            background-color: #011839;
+            background-image: none;
+            color: #ffffff
          }
          </style>
          """,
