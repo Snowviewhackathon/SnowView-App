@@ -9,6 +9,7 @@ from pandas.api.types import (
     is_object_dtype,
 ) 
 progress_bar = st.sidebar.progress(0) 
+frame_text = st.sidebar.empty()
 def filter_dataframe(df: pd.DataFrame) -> pd.DataFrame:
     """
     Adds a UI on top of a dataframe to let viewers filter columns
@@ -102,5 +103,6 @@ st.markdown(
      unsafe_allow_html=True
  )
 progress_bar.empty()
+frame_text.empty()
 st.dataframe(filter_dataframe(df))
 
