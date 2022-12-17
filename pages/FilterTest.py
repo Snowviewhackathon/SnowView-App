@@ -37,7 +37,7 @@ def filter_dataframe(df: pd.DataFrame) -> pd.DataFrame:
             
     modification_container = st.container()
     with modification_container:
-            to_filter_columns = st.multiselect("Filter dataframe on", df.columns[[1,2]])
+            to_filter_columns = st.multiselect("Filter dataframe on", df.columns)
             for column in to_filter_columns:
                 left, right = st.columns((1, 20))
                 left.write("↳")
@@ -49,13 +49,18 @@ def filter_dataframe(df: pd.DataFrame) -> pd.DataFrame:
                     default=list(df['Pipeline Executor'].unique()),
                     )
                     df = df[df['Pipeline Executor'].isin(user_input)]
-                if is_categorical_dtype(df['Pipeline Status']) or df['Pipeline Status'].nunique() < 10:
-                    user_cat_input = right.multiselect(
-                    f"Values for {column}",
-                    df['Pipeline Status'].unique(),
-                    default=list(df['Pipeline Status'].unique()),
+                elif is_datetime64_any_dtype(df['Pipeline Start Time']):
+                    user_date_input = right.date_input(
+                        f"Values for {column}",
+                        value=(
+                            df['Pipeline Start Time'].min(),
+                            df['Pipeline Start Time'].max(),
+                        ),
                     )
-                    df = df[df['Pipeline Status'].isin(user_cat_input)]
+                    if len(user_date_input) == 2:
+                        user_date_input = tuple(map(pd.to_datetime, user_date_input))
+                        start_date, end_date = user_date_input
+                        df = df.loc[df['Pipeline Start Time'].between(start_date, end_date)]
                 else:
                     user_text_input = right.text_input(f"Substring or regex in {column}",
                                                   )
