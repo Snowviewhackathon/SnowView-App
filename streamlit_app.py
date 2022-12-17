@@ -15,16 +15,5 @@ with modification_container:
          """,
          unsafe_allow_html=True
      )
-    
-    streamlit.markdown(
-         f"""
-         <style>
-         .sidebar .css-1aumxhk {
-            background-color: #011839;
-            background-image: none;
-            color: #ffffff
-         }
-         </style>
-         """,
-        unsafe_allow_html=True,
-    )
+    streamlit.markdown("""section[data-testid=“stSidebar”] div[class=“css-17eq0hr e1fqkh3o1”] {background-image: linear-gradient(#8993ab,#8993ab);color: white}""",unsafe_allow_html=True)
+
