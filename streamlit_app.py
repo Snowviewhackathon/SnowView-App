@@ -2,7 +2,7 @@ import streamlit
 
 modification_container = streamlit.container()
 with modification_container:
-    col1, col2, col3 = st.columns(3)
+    col1, col2, col3 = streamlit.columns(3)
     with col1:
         streamlit.write(' ')
     with col2:
