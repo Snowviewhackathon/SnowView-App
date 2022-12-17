@@ -77,33 +77,12 @@ st.markdown(
      .stApp {{
          #background: url("");
          background-color: #86b6fd;
-         background-size: cover
+         #background-size: cover
      }}
      </style>
      """,
      unsafe_allow_html=True
  )
-st.markdown(f'<h1 style="color:#FFFFFF;font-size:48px;">{"❄️  SnowView  ❄️"}</h1>', unsafe_allow_html=True)
-st.markdown(f'<h1 style="color:#FFFFFF;font-size:24px;">{"Snowflake Process : Execution Details"}</h1>', unsafe_allow_html=True)
-
-res=df.style.set_table_styles([
-                            {
-                               "selector":"thead",
-                                "props":"font-weight:bold; color:#000000; background-color:#86befd; border:1.1px black;"
-                            },
-                            {
-                               "selector":"td",
-                                "props":"font-size:11px"
-                            },
-                          
-                            {
-                               "selector":"stTable",
-                                "props":"width:100%;"
-                            },
-
-                       ])
-
-
-type(res)
-st.table(res) 
+st.markdown(f'<h1 style="color:#FFFFFF;font-size:48px;">{"❄️  SnowView"}</h1>', unsafe_allow_html=True)
+st.markdown(f'<h1 style="color:#FFFFFF;font-size:24px;">{"Snowflake Process : Complete History"}</h1>', unsafe_allow_html=True)
 st.dataframe(filter_dataframe(df))
