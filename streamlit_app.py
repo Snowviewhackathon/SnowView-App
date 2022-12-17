@@ -16,7 +16,7 @@ with modification_container:
          unsafe_allow_html=True
      )
     
-    st.markdown(
+    streamlit.markdown(
         """
     <style>
     .sidebar .sidebar-content {
