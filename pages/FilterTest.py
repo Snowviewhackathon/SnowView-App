@@ -49,6 +49,14 @@ def filter_dataframe(df: pd.DataFrame) -> pd.DataFrame:
                     default=list(df['Pipeline Executor'].unique()),
                     )
                     df = df[df['Pipeline Executor'].isin(user_input)]
+                    
+                if is_categorical_dtype(df['Pipeline Status']) or df['Pipeline Status'].nunique() < 10:
+                    user_input = right.multiselect(
+                    f"Values for {column}",
+                    df['Pipeline Status'].unique(),
+                    default=list(df['Pipeline Status'].unique()),
+                    )
+                    df = df[df['Pipeline Status'].isin(user_input)]
                 elif is_datetime64_any_dtype(df['Pipeline Start Time']):
                     user_date_input = right.date_input(
                         f"Values for {column}",
