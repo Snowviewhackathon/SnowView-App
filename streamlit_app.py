@@ -2,12 +2,14 @@ import streamlit
 
 modification_container = streamlit.container()
 with modification_container:
-    col1, col2, col3 = streamlit.columns(3)
+    col1, col2, col3, col4 = streamlit.columns(4)
     with col1:
         streamlit.write(' ')
-    with col2:
-        streamlit.markdown("<h1 style='text-align: center; color: white;font-size:80px'>❄️Snow View❄️</h1>", unsafe_allow_html=True)
+     with col2:
+        streamlit.write(' ')
     with col3:
+        streamlit.markdown("<h1 style='text-align: center; color: white;font-size:80px'>❄️Snow View❄️</h1>", unsafe_allow_html=True)
+    with col4:
         streamlit.write(' ')
     streamlit.markdown(
          f"""
