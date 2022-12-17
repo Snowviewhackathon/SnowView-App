@@ -8,7 +8,7 @@ from pandas.api.types import (
     is_numeric_dtype,
     is_object_dtype,
 ) 
-
+progress_bar = st.sidebar.progress(0) 
 def filter_dataframe(df: pd.DataFrame) -> pd.DataFrame:
     """
     Adds a UI on top of a dataframe to let viewers filter columns
@@ -88,8 +88,7 @@ my_cur.execute("SELECT PIPELINE_NAME,PIPELINE_EXECUTOR,PIPELINE_STATUS,PIPELINE_
 res = my_cur.fetchall()
 df= pd.DataFrame(res, columns=['Pipeline Name','Pipeline Executor','Pipeline Status','Pipeline Start Time','Pipeline End Time','Pipeline Execution Time','Credits Consumed','Error Details'])
 st.markdown(f'<h1 style="color:#FFFFFF;font-size:48px;">{"❄️  SnowView"}</h1>', unsafe_allow_html=True)
-st.markdown(f'<h1 style="color:#FFFFFF;font-size:24px;">{"Snowflake Process : Complete History"}</h1>', unsafe_allow_html=True)  
-progress_bar = st.sidebar.progress(0)  
+st.markdown(f'<h1 style="color:#FFFFFF;font-size:24px;">{"Snowflake Process : Complete History"}</h1>', unsafe_allow_html=True)   
 st.markdown(
      f"""
      <style>
@@ -102,5 +101,6 @@ st.markdown(
      """,
      unsafe_allow_html=True
  )
-st.dataframe(filter_dataframe(df))
 progress_bar.empty()
+st.dataframe(filter_dataframe(df))
+
