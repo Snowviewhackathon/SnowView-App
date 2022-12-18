@@ -88,7 +88,7 @@ my_cur.execute("SELECT PIPELINE_NAME,PIPELINE_EXECUTOR,PIPELINE_STATUS,PIPELINE_
 res = my_cur.fetchall()
 df= pd.DataFrame(res, columns=['Pipeline Name','Pipeline Executor','Pipeline Status','Pipeline Start Time','Pipeline End Time','Pipeline Execution Time','Credits Consumed','Error Details'])
 st.markdown(f'<h1 style="color:#FFFFFF;font-size:48px;">{"❄️ SnowView"}</h1>', unsafe_allow_html=True)
-st.markdown(f'<h1 style="color:#FFFFFF;font-size:24px;">{"Usage Metrics (last 7 days)"}</h1>', unsafe_allow_html=True)    
+st.markdown(f'<h1 style="color:#FFFFFF;font-size:24px;text-align: center;">{"Usage Metrics (last 7 days)"}</h1>', unsafe_allow_html=True)    
 st.markdown(
      f"""
      <style>
