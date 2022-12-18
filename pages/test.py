@@ -19,6 +19,6 @@ headers = {
     'selector': 'th:not(.index_name)',
     'props': 'background-color: #000066; color: white;'
 }
-df.set_table_styles([cell_hover, index_names, headers])
+#df.set_table_styles([cell_hover, index_names, headers])
 
 streamlit.dataframe(df.style.set_table_styles([cell_hover, index_names, headers]))
