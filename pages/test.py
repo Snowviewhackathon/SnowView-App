@@ -7,7 +7,7 @@ data = [['tom', 10], ['nick', 15], ['juli', 14]]
  
 # Create the pandas DataFrame
 df = pd.DataFrame(data, columns=['Name', 'Age'])
-s=df.style.set_table_styles([
+sp=df.style.set_table_styles([
                             {
                                "selector":"thead",
                                 "props":"font-weight:bold; color:#FF0000; background-color:green; border:1.3px solid black;"
@@ -23,16 +23,21 @@ s=df.style.set_table_styles([
                             },
 
                        ])
+s=df.style.set_table_styles([
+                           {
+                               "selector":"thead",
+                               "props":"background-color:dodgerblue; color:white; border:3px solid red;"
+                           },
 
-p=df.style.set_table_styles(
-       [{
-           'selector': 'thead',
-           'props': [
-               ('background-color', 'black'),
-               ('color', 'cyan')]
-       }])
-type(p)
+
+
+                      ])
+
+
+
+type(s)
+
 #df.set_table_styles([cell_hover, index_names, headers])
-streamlit.dataframe(p)
+streamlit.dataframe(s)
 
 #streamlit.dataframe(df.style.set_table_styles([cell_hover, index_names, headers]))
