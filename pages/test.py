@@ -21,4 +21,4 @@ headers = {
 }
 df.set_table_styles([cell_hover, index_names, headers])
 
-streamlit.dataframe(df.set_table_styles([cell_hover, index_names, headers]))
+streamlit.dataframe(df.style.set_table_styles([cell_hover, index_names, headers]))
