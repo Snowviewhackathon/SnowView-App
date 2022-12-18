@@ -33,6 +33,12 @@ p=df.style.set_table_styles(
        }])
 
 #df.set_table_styles([cell_hover, index_names, headers])
-streamlit.dataframe(p)
+streamlit.dataframe(df.style.set_table_styles(
+       [{
+           'selector': 'th',
+           'props': [
+               ('background-color', 'black'),
+               ('color', 'cyan')]
+       }]))
 
 #streamlit.dataframe(df.style.set_table_styles([cell_hover, index_names, headers]))
