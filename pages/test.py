@@ -10,11 +10,11 @@ df = pd.DataFrame(data, columns=['Name', 'Age'])
 s=df.style.set_table_styles([
                             {
                                "selector":"thead",
-                                "props":"font-weight:bold; color:#FF0000; background-color:White; border:1.3px solid black;"
+                                "props":"font-weight:bold; color:#FF0000; background-color:green; border:1.3px solid black;"
                             },
                             {
                                "selector":"td",
-                                "props":"font-size:20px"
+                                "props":"font-size:50px"
                             },
                           
                             {
