@@ -8,7 +8,9 @@ data = [['tom', 10], ['nick', 15], ['juli', 14]]
 # Create the pandas DataFrame
 df = pd.DataFrame(data, columns=['Name', 'Age'])
 
-streamlit.dataframe(df.style.set_table_styles(
-    [{'selector': 'tr:hover',
-      'props': 'background-color: yellow; font-size: 1em;'}]
-))
+streamlit.dataframe(df.style.set_table_styles({
+    'A': [{'selector': '',
+           'props': [('color', 'red')]}],
+    'B': [{'selector': 'td',
+           'props': 'color: blue;'}]
+}, overwrite=False))
