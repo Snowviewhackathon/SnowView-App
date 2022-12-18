@@ -103,4 +103,4 @@ st.markdown(
      """,
      unsafe_allow_html=True
  )
-st.dataframe(filter_dataframe(df))
+st.dataframe(filter_dataframe(df.style.set_properties(**{'background-color': 'black','color': 'green'})))
