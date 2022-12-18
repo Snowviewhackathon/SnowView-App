@@ -20,6 +20,6 @@ headers = {
     'props': 'background-color: #000066; color: white;'
 }
 #df.set_table_styles([cell_hover, index_names, headers])
-streamlit.dataframe( df. style. set_properties(**{'font-size':'2.5rem'})
+streamlit.dataframe( df. style. set_properties(**{'font-size':'2.5rem'}))
 
 #streamlit.dataframe(df.style.set_table_styles([cell_hover, index_names, headers]))
