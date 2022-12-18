@@ -9,6 +9,6 @@ data = [['tom', 10], ['nick', 15], ['juli', 14]]
 df = pd.DataFrame(data, columns=['Name', 'Age'])
 a=df.style.set_table_styles(
     [{'selector': 'tr:hover',
-      'props': [('background-color', 'yellow')]}]
-)  
+      'props': 'background-color: yellow; font-size: 1em;'}]
+)   
 streamlit.dataframe(a)
