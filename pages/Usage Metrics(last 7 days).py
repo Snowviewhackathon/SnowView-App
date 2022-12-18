@@ -106,6 +106,6 @@ st.markdown(
  )
 df = df
 #st.dataframe(filter_dataframe(df), 1000, 600)
-st.dataframe(filter_dataframe(df), width=100)
+st.dataframe(filter_dataframe(df), width=1000)
 #st.dataframe(df, height=150)
 #st.dataframe(filter_dataframe(df.style.set_properties(**{'background-color': 'black','color': 'green'})))                                                         
