@@ -39,5 +39,6 @@ type(s)
 
 #df.set_table_styles([cell_hover, index_names, headers])
 streamlit.dataframe(s)
+streamlit.table(s) 
 
 #streamlit.dataframe(df.style.set_table_styles([cell_hover, index_names, headers]))
