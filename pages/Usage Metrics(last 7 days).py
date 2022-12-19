@@ -24,7 +24,7 @@ def filter_dataframe(df: pd.DataFrame) -> pd.DataFrame:
         #return df1
         return df
     
-    #df = df.copy()
+    df = df.copy()
 
     # Try to convert datetimes into a standard format (datetime, no timezone)
     for col in df.columns:
@@ -105,6 +105,5 @@ st.markdown(
      unsafe_allow_html=True
  )
 
-#st.dataframe(filter_dataframe(df))
-st.table(filter_dataframe(df.style.set_properties(**{'font-size':'11px'}))) 
-#st.dataframe(filter_dataframe(df.style.set_properties(**{'background-color': 'black','color': 'green'})))                                                         
+st.dataframe(filter_dataframe(df))
+#st.dataframe(filter_dataframe(df.style.set_properties(**{'background-color': 'black','color': 'green','font-size':'11px'})))                                                         
