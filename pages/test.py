@@ -10,6 +10,6 @@ df = pd.DataFrame(data, columns=['Name', 'Age'])
 
  
 #st.dataframe(filter_dataframe(df.style.set_properties(**{'font-size':'24pt'})))
-st.dataframe(df.style.set_properties(**{'background-color': 'black','color': 'green','font-size':'11px'}))                                                       
+st.dataframe(df.style.set_properties(**{'background-color': 'black','color': 'green','font-size':'5px'}))                                                       
 
 
