@@ -1,7 +1,7 @@
 import streamlit as st
 # Import pandas library
 import pandas as pd
-import seaborn as sns
+
 def HTML_with_style(df, style=None, random_id=None):
     from IPython.display import HTML
     import numpy as np
