@@ -107,5 +107,5 @@ result =st.button('Credits Consumed Chart')
 st.write(result)
 if result:   
 st.line_chart(df, x="Pipeline Start Time", y=["Credits Consumed"])
-#else:
- #  st.line_chart(df, x="Pipeline Start Time", y=["Pipeline Execution Time (in seconds)"])
+else:
+   st.line_chart(df, x="Pipeline Start Time", y=["Pipeline Execution Time (in seconds)"])
