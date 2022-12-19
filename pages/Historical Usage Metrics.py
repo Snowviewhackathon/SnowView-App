@@ -43,7 +43,7 @@ def filter_dataframe(df: pd.DataFrame) -> pd.DataFrame:
                 left, right = st.columns((1, 20))
                 left.write("↳")
                
-                if is_categorical_dtype(df[column]) or df[column].nunique() < 10:
+                if is_categorical_dtype(df[column]) or df[column].nunique() < 10: 
                     user_cat_input = right.multiselect(
                         f"Values for {column}",
                         df[column].unique(),
