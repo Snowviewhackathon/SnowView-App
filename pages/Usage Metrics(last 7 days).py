@@ -106,5 +106,5 @@ st.markdown(
  )
 
 #st.dataframe(filter_dataframe(df))
-st.table(filter_dataframe(df.style.set_properties(**{'font-size':11px}))) 
+st.table(filter_dataframe(df.style.set_properties(**{'font-size':'11px'}))) 
 #st.dataframe(filter_dataframe(df.style.set_properties(**{'background-color': 'black','color': 'green'})))                                                         
