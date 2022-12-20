@@ -1,46 +1,71 @@
-import streamlit as st
+import pickle
+from pathlib import Path
 
-def check_password():
-    """Returns `True` if the user had the correct password."""
+import pandas as pd  # pip install pandas openpyxl
+import plotly.express as px  # pip install plotly-express
+import streamlit as st  # pip install streamlit
+import streamlit_authenticator as stauth  # pip install streamlit-authenticator
 
-    def password_entered():
-        """Checks whether a password entered by the user is correct."""
-        if st.session_state["password"] == st.secrets["password"]:
-            st.session_state["password_correct"] = True
-            del st.session_state["password"]  # don't store password
-        else:
-            st.session_state["password_correct"] = False
 
-    if "password_correct" not in st.session_state:
-        # First run, show input for password.
-        st.text_input(
-            "Password", type="password", on_change=password_entered, key="password"
-        )
-        return False
-    elif not st.session_state["password_correct"]:
-        # Password not correct, show input + error.
-        st.text_input(
-            "Password", type="password", on_change=password_entered, key="password"
-        )
-        st.error("😕 Password incorrect")
-        return False
-    else:
-        # Password correct.
-        return True
+# emojis: https://www.webfx.com/tools/emoji-cheat-sheet/
+st.set_page_config(page_title="streamlit Dashboard", page_icon=":bar_chart:", layout="wide")
 
-if check_password():
-    #st.button("Click me")
-    st.markdown("<h1 style='text-align: center; color: white;font-size:48px'>❄️SnowView</h1>", unsafe_allow_html=True)
-    st.markdown(
-     f"""
-     <style>
-     .stApp {{
-         #background: url("");
-         background-color: #86b6fd;
-         #background-size: cover
-     }}
-     </style>
-     """,
-     unsafe_allow_html=True
-    )
-  
+hide_bar= """
+    <style>
+    [data-testid="stSidebar"][aria-expanded="true"] > div:first-child {
+        visibility:hidden;
+        width: 0px;
+    }
+    [data-testid="stSidebar"][aria-expanded="false"] > div:first-child {
+        visibility:hidden;
+    }
+    </style>
+"""
+
+# --- USER AUTHENTICATION ---
+names = ["Peter Parker", "Rebecca Miller","bharath"]
+usernames = ["pparker", "rmiller","bharath"]
+
+# load hashed passwords
+file_path = Path(__file__).parent / "hashed_pw.pkl"
+with file_path.open("rb") as file:
+    hashed_passwords = pickle.load(file)
+
+authenticator = stauth.Authenticate(names, usernames, hashed_passwords,
+    "SIPL_dashboard", "abcdef")
+
+name, authentication_status, username = authenticator.login("Login", "main")
+
+if authentication_status == False:
+    st.error("Username/password is incorrect")
+    st.markdown(hide_bar, unsafe_allow_html=True)
+
+if authentication_status == None:
+    st.warning("Please enter your username and password")
+    st.markdown(hide_bar, unsafe_allow_html=True)
+
+
+if authentication_status:
+    # # ---- SIDEBAR ----
+    st.sidebar.title(f"Welcome {name}")
+    # st.sidebar.header("select page here :")
+    st.write("# Welcome to Streamlit!..")
+
+    ###about ....
+    st.subheader("Introduction :")
+    st.text("1. \n2. \n3. \n4. \n5. \n")
+
+    st.sidebar.success("Select a page above.")
+
+    ###---- HIDE STREAMLIT STYLE ----
+    hide_st_style = """
+                <style>
+                #MainMenu {visibility: hidden;}
+                footer {visibility: hidden;}
+                header {visibility: hidden;}
+                </style>
+                """
+    st.markdown(hide_st_style, unsafe_allow_html=True)
+
+
+    authenticator.logout("Logout", "sidebar")
