@@ -17,7 +17,7 @@ e=df.style.applymap(color_negative, color='red', subset=(slice(0,5,2), "A"))
   
 
 
-st.dataframe(e)
+st.dataframe(df.style)
 #st.dataframe(filter_dataframe(df.style.set_properties(**{'font-size':'24pt'}))                                                   
 
 
