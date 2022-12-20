@@ -1,6 +1,7 @@
 import streamlit as st
 # Import pandas library
 import pandas as pd
+import numpy as np
 
 def color_negative(v, color):
     return f"color: {color};" if v < 0 else None
