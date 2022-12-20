@@ -29,6 +29,7 @@ def check_password():
         return True
 
 if check_password():
+    st.button("Click me")
     st.markdown("<h1 style='text-align: center; color: white;font-size:48px'>❄️SnowView</h1>", unsafe_allow_html=True)
     st.markdown(
      f"""
@@ -42,5 +43,4 @@ if check_password():
      """,
      unsafe_allow_html=True
     )
-    st.write("Here goes your normal Streamlit app...")
     st.button("Click me")
