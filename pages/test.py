@@ -30,7 +30,7 @@ data = [['tom', 10], ['nick', 15], ['juli', 14]]
 df = pd.DataFrame(data, columns=['Name', 'Age'])
 
 st.dataframe(df)
-
+st.dataframe(df.style.format("{:.2%}"))
 st.dataframe(
     df.style.applymap(color_negative_red).apply(
         highlight_max, color="darkorange", axis=0
