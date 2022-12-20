@@ -26,7 +26,7 @@ styles = [
 
 # table
 df2=df.style.set_properties(**{'text-align': 'left'}).set_table_styles(styles)
-st.dataframe(df2)
+st.table(df2)
 
 
 #st.dataframe(filter_dataframe(df.style.set_properties(**{'font-size':'24pt'}))                                                   
