@@ -40,7 +40,7 @@ g= df.style.set_table_styles({
            'props': 'color: blue;'}]
 }, overwrite=False)   
 
-
+st.table(g)
 st.dataframe(g)
 #st.dataframe(filter_dataframe(df.style.set_properties(**{'font-size':'24pt'}))                                                   
 
