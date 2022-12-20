@@ -26,7 +26,7 @@ headers = {
     'selector': 'th:not(.index_name)',
     'props': 'background-color: #000066; color: white;'
 }
-a=df.set_table_styles([cell_hover, index_names, headers])
+#a=df.set_table_styles([cell_hover, index_names, headers])
 
 f=df.style.set_table_styles(
     [{'selector': 'tr:hover',
