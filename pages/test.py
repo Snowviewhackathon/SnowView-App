@@ -14,10 +14,24 @@ c=df.style.applymap(color_negative, color='red', subset=["A", "B"])
 d=df.style.applymap(color_negative, color='red',subset=([0,1,2], slice(None)))  
 e=df.style.applymap(color_negative, color='red', subset=(slice(0,5,2), "A"))
 
+cell_hover = {  # for row hover use <tr> instead of <td>
+    'selector': 'td:hover',
+    'props': [('background-color', '#ffffb3')]
+}
+index_names = {
+    'selector': '.index_name',
+    'props': 'font-style: italic; color: darkgrey; font-weight:normal;'
+}
+headers = {
+    'selector': 'th:not(.index_name)',
+    'props': 'background-color: #000066; color: white;'
+}
+a=df.set_table_styles([cell_hover, index_names, headers])
+
   
 
 
-st.dataframe(df.style)
+st.dataframe(a)
 #st.dataframe(filter_dataframe(df.style.set_properties(**{'font-size':'24pt'}))                                                   
 
 
