@@ -10,8 +10,8 @@ df = pd.DataFrame(data, columns=['Name', 'Age'])
 st.dataframe(df)
 
 st.dataframe(
-    df.style.applymap(color_negative_red).apply(
-        highlight_max, color="darkorange", axis=0
+    df.style.applymap(blue).apply(
+        highlight_max, color="pink", axis=0
     )
 )
 #st.dataframe(df)
