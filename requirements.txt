@@ -1,5 +1,6 @@
 #requirements.txt
 snowflake-connector-python
+plotly.express
 streamlit==1.11.0
 streamlit-authenticator==0.1.5
 streamlit-folium==0.6.14
