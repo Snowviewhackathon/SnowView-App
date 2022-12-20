@@ -34,7 +34,7 @@ df = pd.DataFrame(data, columns=['Name', 'Age'])
 st.dataframe(   
     df.style.applymap(color_negative_red).apply(highlight_max, color="darkorange", axis=0)
 )
-st.dataframe(df)
+#st.dataframe(df)
 #st.dataframe(filter_dataframe(df.style.set_properties(**{'font-size':'24pt'}))                                                   
 
 
