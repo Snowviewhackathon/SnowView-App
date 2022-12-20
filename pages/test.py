@@ -9,11 +9,11 @@ df = pd.DataFrame(np.random.randn(5, 2), columns=["A", "B"])
 #a=df.style.applymap(color_negative, color='red')  
 b=df.style.applymap(color_negative, color='red', subset="A")
  
-#df.style.applymap(color_negative, color='red', subset=["A", "B"])
+c=df.style.applymap(color_negative, color='red', subset=["A", "B"])
   
 
-#st.dataframe(   df.style.applymap(color_negative_red).apply(highlight_max, color="darkorange", axis=0))
-st.dataframe(b)
+
+st.dataframe(c)
 #st.dataframe(filter_dataframe(df.style.set_properties(**{'font-size':'24pt'}))                                                   
 
 
