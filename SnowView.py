@@ -49,13 +49,13 @@ if authentication_status:
     # # ---- SIDEBAR ----
     st.sidebar.title(f"Welcome {name}")
     # st.sidebar.header("select page here :")
-    st.write("# Welcome to Streamlit!..")
+    st.write("# Welcome to SnowView!..")
 
     ###about ....
-    st.subheader("Introduction :")
-    st.text("1. \n2. \n3. \n4. \n5. \n")
+    #st.subheader("Introduction :")
+    #st.text("1. \n2. \n3. \n4. \n5. \n")
 
-    st.sidebar.success("Select a page above.")
+    #st.sidebar.success("Select a page above.")
 
     ###---- HIDE STREAMLIT STYLE ----
     hide_st_style = """
