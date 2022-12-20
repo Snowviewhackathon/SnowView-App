@@ -10,10 +10,14 @@ df = pd.DataFrame(np.random.randn(5, 2), columns=["A", "B"])
 b=df.style.applymap(color_negative, color='red', subset="A")
  
 c=df.style.applymap(color_negative, color='red', subset=["A", "B"])
+
+d=df.style.applymap(color_negative, color='red',subset=([0,1,2], slice(None)))  
+e=df.style.applymap(color_negative, color='red', subset=(slice(0,5,2), "A"))
+
   
 
 
-st.dataframe(c)
+st.dataframe(d)
 #st.dataframe(filter_dataframe(df.style.set_properties(**{'font-size':'24pt'}))                                                   
 
 
