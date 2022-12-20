@@ -33,13 +33,15 @@ f=df.style.set_table_styles(
       'props': [('background-color', 'yellow')]}]
 )  
 
-  
+g= df.style.set_table_styles({
+     'A': [{'selector': '',
+           'props': [('color', 'red')]}],
+     'B': [{'selector': 'td',
+           'props': 'color: blue;'}]
+}, overwrite=False)   
 
 
-st.dataframe(df.style.set_table_styles(
-    [{'selector': 'tr:hover',
-      'props': [('background-color', 'yellow')]}]
-)  )
+st.dataframe(g)
 #st.dataframe(filter_dataframe(df.style.set_properties(**{'font-size':'24pt'}))                                                   
 
 
