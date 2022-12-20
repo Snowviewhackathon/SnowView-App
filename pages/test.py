@@ -23,6 +23,9 @@ def highlight_max(data, color="yellow"):
         return pd.DataFrame(
             np.where(is_max, attr, ""), index=data.index, columns=data.columns
         )
+    
+    def color_negative(v, color):
+    return f"color: {color};" if v < 0 else None
 
 data = [['tom', 10], ['nick', 15], ['juli', 14]]
  
@@ -32,13 +35,12 @@ df = pd.DataFrame(data, columns=['Name', 'Age'])
 #st.dataframe(df.style.format("{:.2%}"))
 st.dataframe(df)
 
-st.dataframe(
+#st.dataframe(
     #df.style.applymap(color_negative_red).apply(highlight_max, color="darkorange", axis=0
-    df.style.applymap(color_negative_red)#.apply(highlight_max, color="darkorange", axis=0
-    )
-)
+#    df.style.applymap(color_negative_red).apply(highlight_max, color="darkorange", axis=0)
+#)
 #st.dataframe(df)
-
+df.style.applymap(color_negative, color='light blue') 
 #st.dataframe(filter_dataframe(df.style.set_properties(**{'font-size':'24pt'}))                                                   
 
 
