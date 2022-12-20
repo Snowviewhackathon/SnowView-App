@@ -8,7 +8,7 @@ def color_negative_red(val):
     the css property `'color: red'` for negative
     strings, black otherwise.
     """
-    color = "red" #if val < 0 else "black"
+    color = "light blue" #if val < 0 else "black"
     return "color: %s" % color
 
 
@@ -29,12 +29,12 @@ data = [['tom', 10], ['nick', 15], ['juli', 14]]
 # Create the pandas DataFrame
 df = pd.DataFrame(data, columns=['Name', 'Age'])
 
-st.dataframe(df.style.format("{:.2%}"))
+#st.dataframe(df.style.format("{:.2%}"))
 st.dataframe(df)
 
 st.dataframe(
-    df.style.applymap(color_negative_red).apply(
-        highlight_max, color="darkorange", axis=0
+    #df.style.applymap(color_negative_red).apply(highlight_max, color="darkorange", axis=0
+    df.style.applymap(color_negative_red)#.apply(highlight_max, color="darkorange", axis=0
     )
 )
 #st.dataframe(df)
