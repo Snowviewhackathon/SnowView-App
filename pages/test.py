@@ -28,10 +28,15 @@ headers = {
 }
 a=df.set_table_styles([cell_hover, index_names, headers])
 
+f=df.style.set_table_styles(
+    [{'selector': 'tr:hover',
+      'props': [('background-color', 'yellow')]}]
+)  
+
   
 
 
-st.dataframe(a)
+st.dataframe(f)
 #st.dataframe(filter_dataframe(df.style.set_properties(**{'font-size':'24pt'}))                                                   
 
 
