@@ -118,4 +118,4 @@ st.download_button(
 #st.checkbox("Use container width", value=False, key="use_container_width")
 #st.dataframe(filter_dataframe(df))
 st.dataframe(filter_dataframe(df.style.highlight_max(axis=0, props='background-color:lightgreen;', subset=['Credits Consumed'])
-         .highlight_min(axis=0, props='background-color:lightred;', subset=['Credits Consumed'])))                                                       
+         .highlight_min(axis=0, props='background-color:red;', subset=['Credits Consumed'])))                                                       
