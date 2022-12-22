@@ -4,8 +4,8 @@ import pandas as pd
 import pandas as pd
 
 data = {
-  "calories": [420, 380, 390],
-  "duration": [50, 40, 45]
+  "A": [420, 380, 390],
+  "B": [50, 40, 45]
 }
 
 #load data into a DataFrame object:
