@@ -58,6 +58,7 @@ st.set_page_config(
 
 st.table(g)
 st.dataframe(g)
+st.snow()
 #st.dataframe(filter_dataframe(df.style.set_properties(**{'font-size':'24pt'}))                                                   
 
 
