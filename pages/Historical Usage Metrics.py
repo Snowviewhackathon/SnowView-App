@@ -9,6 +9,10 @@ from pandas.api.types import (
     is_object_dtype,
 ) 
 
+def convert_df(df):
+    # IMPORTANT: Cache the conversion to prevent computation on every rerun
+    return df.to_csv().encode('utf-8')
+
 def filter_dataframe(df: pd.DataFrame) -> pd.DataFrame:
     """
     Adds a UI on top of a dataframe to let viewers filter columns
@@ -102,5 +106,12 @@ st.markdown(
      """,
      unsafe_allow_html=True
  )
+csv = convert_df(df)
+st.download_button(
+    label="Download data as CSV",
+    data=csv,
+    file_name='Historical Usage Metrics.csv',
+    mime='text/csv',
+)
 st.dataframe(filter_dataframe(df))
 
