@@ -1,3 +1,4 @@
+import seaborn as sns
 import snowflake.connector
 import streamlit as st
 import pandas as pd
@@ -114,7 +115,9 @@ st.download_button(
     file_name='Usage Metrics(last 7 days).csv',
     mime='text/csv',
 )
+cm = sns.light_palette("green", as_cmap=True)
 #st.checkbox("Use container width", value=False, key="use_container_width")
 #st.dataframe(filter_dataframe(df))
-st.dataframe(filter_dataframe(df.style.highlight_max(axis=0, props='background-color:lightgreen;', subset=['Credits Consumed'])
-         .highlight_min(axis=0, props='background-color:red;', subset=['Credits Consumed'])))                                                       
+#st.dataframe(filter_dataframe(df.style.highlight_max(axis=0, props='background-color:lightgreen;', subset=['Credits Consumed'])
+         #.highlight_min(axis=0, props='background-color:red;', subset=['Credits Consumed'])))  
+st.dataframe(filter_dataframe(df.style.background_gradient(cmap=cm).set_precision(2)))
