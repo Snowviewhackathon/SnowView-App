@@ -114,5 +114,6 @@ st.download_button(
     file_name='Usage Metrics(last 7 days).csv',
     mime='text/csv',
 )
-st.dataframe(filter_dataframe(df))
+st.checkbox("Use container width", value=False, key="use_container_width")
+st.dataframe(filter_dataframe(df,use_container_width=st.session_state.use_container_width))
 #st.dataframe(filter_dataframe(df.style.set_properties(**{'background-color': 'black','color': 'green','font-size':'11px'})))                                                         
