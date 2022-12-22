@@ -115,5 +115,6 @@ st.download_button(
     mime='text/csv',
 )
 #st.checkbox("Use container width", value=False, key="use_container_width")
-st.dataframe(filter_dataframe(df))
-#st.dataframe(filter_dataframe(df.style.set_properties(**{'background-color': 'black','color': 'green','font-size':'11px'})))                                                         
+#st.dataframe(filter_dataframe(df))
+st.dataframe(filter_dataframe(df.style.highlight_max(axis=0, props='background-color:lightgreen;', subset=['A','B'])
+         .highlight_min(axis=0, props='background-color:red;', subset=['A','B']))                                                       
