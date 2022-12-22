@@ -111,7 +111,7 @@ csv = convert_df(df)
 st.download_button(
     label="Download data as CSV",
     data=csv,
-    file_name='df.csv',
+    file_name='Usage Metrics(last 7 days).csv',
     mime='text/csv',
 )
 st.dataframe(filter_dataframe(df))
