@@ -69,3 +69,4 @@ if authentication_status:
 
 
     authenticator.logout("Logout", "sidebar")
+st.snow()
