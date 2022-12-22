@@ -113,5 +113,8 @@ st.download_button(
     file_name='Historical Usage Metrics.csv',
     mime='text/csv',
 )
+with st.spinner('Wait for it...'):
+    time.sleep(5)
+st.success('Done!')
 st.dataframe(filter_dataframe(df))
 
