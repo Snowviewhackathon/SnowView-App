@@ -113,11 +113,11 @@ st.markdown(
 #else:
 ##st.line_chart(df, x="Pipeline Name", y="Credits Consumed")
 
-#y = df.columns.'Pipeline Status'
-x = pd.DataFrame(res, columns=['Pipeline Status'])
+y = df.columns
+#x = pd.DataFrame(res, columns=['Pipeline Status'])
 
 # mylabels = ["Success", "Failed"]
-plt.pie(x)
+plt.pie(y, 'Pipeline Status')
 #, labels = mylabels, startangle = 90)
 
 
