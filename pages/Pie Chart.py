@@ -113,5 +113,9 @@ st.markdown(
 #else:
 ##st.line_chart(df, x="Pipeline Name", y="Credits Consumed")
 
-#y = np.array(Pipeline Status)
-plt.pie(Pipeline Status, labels = mylabels, startangle = 90)
+#y = np.array([Success, Failed])
+mylabels = ["Success", "Failed"]
+plt.pie('Pipeline Status', labels = mylabels, startangle = 90)
+
+
+
