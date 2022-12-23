@@ -112,3 +112,6 @@ st.markdown(
 ##st.area_chart(df, x="Pipeline Start Time", y="Credits Consumed")
 #else:
 ##st.line_chart(df, x="Pipeline Name", y="Credits Consumed")
+
+#y = np.array(Pipeline Status)
+plt.pie(Pipeline Status, labels = mylabels, startangle = 90)
