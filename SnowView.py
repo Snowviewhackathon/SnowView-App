@@ -73,5 +73,5 @@ def user_auth_one(name, authentication_status, username,authenticator):
 
 
         authenticator.logout("Logout", "sidebar")
-     user_auth_one()  
+    user_auth_one()  
 st.snow()
