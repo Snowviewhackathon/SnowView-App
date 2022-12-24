@@ -15,3 +15,5 @@ print(df)
 st.dataframe(df.style.highlight_max(axis=0, props='background-color:green;', subset=['A','B'])
          .highlight_min(axis=0, props='background-color:red;', subset=['A','B']))
 #st.dataframe(df)
+
+authenticator.logout("Logout", "sidebar")
