@@ -36,6 +36,7 @@ def user_auth():
         "SIPL_dashboard", "abcdef")
     name, authentication_status, username = authenticator.login("Login", "main")
     data = [name, authentication_status, username,authenticator]
+    print(">>>>>>>>>>>>>>",data)
     return data
    
 
