@@ -67,12 +67,8 @@ if authentication_status:
                 """
     st.markdown(hide_st_style, unsafe_allow_html=True)
 
-    if authentication_status:
-    try:
-        if authenticator.reset_password(username, 'Reset password'):
-            st.success('Password modified successfully')
-    except Exception as e:
-        st.error(e)
+    if authenticator.reset_password(username, 'Reset password'):
+        st.success('Password modified successfully')
 
 
     authenticator.logout("Logout", "sidebar")
