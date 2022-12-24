@@ -5,7 +5,7 @@ from datetime import datetime, timedelta
 import extra_streamlit_components as stx
 from auth.hasher import Hasher
 from auth.utils import generate_random_pw
-from auth.utils import CredentialsError, ForgotError, RegisterError, ResetError, UpdateError
+from auth.exceptions import CredentialsError, ForgotError, RegisterError, ResetError, UpdateError
 
 #from hasher import Hasher
 #from utils import generate_random_pw
