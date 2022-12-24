@@ -3,11 +3,14 @@ import bcrypt
 import streamlit as st
 from datetime import datetime, timedelta
 import extra_streamlit_components as stx
+from auth.hasher import Hasher
+from auth.utils import generate_random_pw
+from auth.utils import CredentialsError, ForgotError, RegisterError, ResetError, UpdateError
 
-from hasher import Hasher
-from utils import generate_random_pw
+#from hasher import Hasher
+#from utils import generate_random_pw
 
-from exceptions import CredentialsError, ForgotError, RegisterError, ResetError, UpdateError
+#from exceptions import CredentialsError, ForgotError, RegisterError, ResetError, UpdateError
 
 class Authenticate:
     """
