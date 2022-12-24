@@ -66,8 +66,7 @@ def user_auth():
                     </style>
                     """
         st.markdown(hide_st_style, unsafe_allow_html=True)
-
-
+    user_auth()
         authenticator.logout("Logout", "sidebar")
     return authenticator
 st.snow()
