@@ -23,18 +23,21 @@ hide_bar= """
 """
 
 # --- USER AUTHENTICATION ---
-names = ["Aniket", "Venu"]
-usernames = ["Aniket_S", "Venu_B"]
+def user_auth():
+    names = ["Aniket", "Venu"]
+    usernames = ["Aniket_S", "Venu_B"]
 
-# load hashed passwords
-file_path = Path(__file__).parent / "hashed_pw.pkl"
-with file_path.open("rb") as file:
-    hashed_passwords = pickle.load(file)
+    # load hashed passwords
+    file_path = Path(__file__).parent / "hashed_pw.pkl"
+    with file_path.open("rb") as file:
+        hashed_passwords = pickle.load(file)
 
-authenticator = stauth.Authenticate(names, usernames, hashed_passwords,
-    "SIPL_dashboard", "abcdef")
-
-name, authentication_status, username = authenticator.login("Login", "main")
+    authenticator = stauth.Authenticate(names, usernames, hashed_passwords,
+        "SIPL_dashboard", "abcdef")
+    name, authentication_status, username = authenticator.login("Login", "main")
+    data = [name, authentication_status, username,authenticator]
+    return data
+   
 
 if authentication_status == False:
     st.error("Username/password is incorrect")
