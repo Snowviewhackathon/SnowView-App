@@ -23,55 +23,50 @@ hide_bar= """
 """
 
 # --- USER AUTHENTICATION ---
-def user_auth():
-    names = ["Aniket", "Venu"]
-    usernames = ["Aniket_S", "Venu_B"]
+names = ["Aniket", "Venu"]
+usernames = ["Aniket_S", "Venu_B"]
 
-    # load hashed passwords
-    file_path = Path(__file__).parent / "hashed_pw.pkl"
-    with file_path.open("rb") as file:
-        hashed_passwords = pickle.load(file)
+# load hashed passwords
+file_path = Path(__file__).parent / "hashed_pw.pkl"
+with file_path.open("rb") as file:
+    hashed_passwords = pickle.load(file)
 
-    authenticator = stauth.Authenticate(names, usernames, hashed_passwords,
-        "SIPL_dashboard", "abcdef")
-    name, authentication_status, username = authenticator.login("Login", "main")
-    data = [name, authentication_status, username,authenticator]
-    print(">>>>>>>>>>>>>>",data)
-    return data
-   
-def user_auth_one(name, authentication_status, username,authenticator):
-    if authentication_status == False:
-        st.error("Username/password is incorrect")
-        st.markdown(hide_bar, unsafe_allow_html=True)
+authenticator = stauth.Authenticate(names, usernames, hashed_passwords,
+    "SIPL_dashboard", "abcdef")
 
-    if authentication_status == None:
-        st.warning("Please enter your username and password")
-        st.markdown(hide_bar, unsafe_allow_html=True)
+name, authentication_status, username = authenticator.login("Login", "main")
+
+if authentication_status == False:
+    st.error("Username/password is incorrect")
+    st.markdown(hide_bar, unsafe_allow_html=True)
+
+if authentication_status == None:
+    st.warning("Please enter your username and password")
+    st.markdown(hide_bar, unsafe_allow_html=True)
 
 
-    if authentication_status:
-        # # ---- SIDEBAR ----
-        st.sidebar.title(f"Welcome {name}")
-        # st.sidebar.header("select page here :")
-        st.write("# Welcome to SnowView!..")
+if authentication_status:
+    # # ---- SIDEBAR ----
+    st.sidebar.title(f"Welcome {name}")
+    # st.sidebar.header("select page here :")
+    st.write("# Welcome to SnowView!..")
 
-        ###about ....
-        #st.subheader("Introduction :")
-        #st.text("1. \n2. \n3. \n4. \n5. \n")
+    ###about ....
+    #st.subheader("Introduction :")
+    #st.text("1. \n2. \n3. \n4. \n5. \n")
 
-        #st.sidebar.success("Select a page above.")
+    #st.sidebar.success("Select a page above.")
 
-        ###---- HIDE STREAMLIT STYLE ----
-        hide_st_style = """
-                    <style>
-                    #MainMenu {visibility: hidden;}
-                    footer {visibility: hidden;}
-                    header {visibility: hidden;}
-                    </style>
-                    """
-        st.markdown(hide_st_style, unsafe_allow_html=True)
+    ###---- HIDE STREAMLIT STYLE ----
+    hide_st_style = """
+                <style>
+                #MainMenu {visibility: hidden;}
+                footer {visibility: hidden;}
+                header {visibility: hidden;}
+                </style>
+                """
+    st.markdown(hide_st_style, unsafe_allow_html=True)
 
 
-        authenticator.logout("Logout", "sidebar")
-    user_auth_one()  
+    authenticator.logout("Logout", "sidebar")
 st.snow()
