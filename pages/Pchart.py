@@ -18,8 +18,8 @@ fig = px.pie(df, values='Credits Consumed', names='Pipeline Name')
 st.write(fig)
 
 
-a=df.groupby('Pipeline Status')['Pipeline Status'].count().plot.pie(autopct='%.2f',figsize=(5,5))
+df.groupby('Pipeline Status')['Pipeline Status'].count().plot.pie(autopct='%.2f',figsize=(5,5))
 
 
-st.dataframe(a)
+st.dataframe(df.groupby('Pipeline Status')['Pipeline Status'].count().plot.pie(autopct='%.2f',figsize=(5,5)))
 
