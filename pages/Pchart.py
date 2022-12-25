@@ -21,5 +21,5 @@ st.write(fig)
 a=df.groupby('Pipeline Status')['Pipeline Status'].count().plot.pie(autopct='%.2f',figsize=(5,5))
 
 
-st.write(a)
+st.dataframe(a)
 
