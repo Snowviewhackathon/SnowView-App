@@ -116,6 +116,12 @@ st.download_button(
     mime='text/csv',
 )
 #st.checkbox("Use container width", value=False, key="use_container_width")
-#st.dataframe(filter_dataframe(df))
-st.dataframe(filter_dataframe(df.style.highlight_max(axis=0, props='background-color:lightgreen;', subset=['Credits Consumed'])
+st.dataframe(filter_dataframe(df.style.set_table_styles(
+       [{
+           'selector': 'th',
+           'props': [
+               ('background-color', 'black'),
+               ('color', 'cyan')]
+       }])))
+#st.dataframe(filter_dataframe(df.style.highlight_max(axis=0, props='background-color:lightgreen;', subset=['Credits Consumed'])
          .highlight_min(axis=0, props='background-color:red;', subset=['Credits Consumed'])))                                                       
