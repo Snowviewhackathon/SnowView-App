@@ -2,6 +2,7 @@ import plotly.express as px
 import streamlit as st
 import plotly.express as px
 import snowflake.connector
+import pandas as pd
 
 my_cnx = snowflake.connector.connect(**st.secrets["snowflake"])
 my_cur = my_cnx.cursor() 
