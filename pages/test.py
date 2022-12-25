@@ -23,5 +23,6 @@ a=df.style.set_table_styles(
                ('background-color', 'black'),
                ('color', 'cyan')]
        }])
-st.table(a)
+st.table(a,900,400)
+st.dataframe(a,900,400)
 
