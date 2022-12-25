@@ -15,7 +15,7 @@ df= pd.DataFrame(res, columns=['Pipeline Name','Pipeline Executor','Pipeline Sta
 # This dataframe has 244 lines, but 4 distinct values for `day`
 #df = px.data.res()
 fig = px.pie(df, values='Credits Consumed', names='Pipeline Name')
-fig1 = px.pie(df, values='Pipeline Name', names='Pipeline Status')
+fig1 = px.pie(df, values='Credits Consumed', names='Pipeline Status')
 #fig.show()
 st.write(fig)
 st.write(fig1)
