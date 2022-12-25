@@ -11,10 +11,11 @@ my_cur.execute("SELECT PIPELINE_NAME,PIPELINE_EXECUTOR,PIPELINE_STATUS,PIPELINE_
 res = my_cur.fetchall()
 df= pd.DataFrame(res, columns=['Pipeline Name','Pipeline Executor','Pipeline Status','Pipeline Start Time','Pipeline End Time','Pipeline Execution Time (in seconds)','Credits Consumed','Error Details'])
 
-fig = px.pie(df, values='Credits Consumed', names='Pipeline Name',title='Pipeline Name and Credits Consumed',color_discrete_sequence=px.colors.sequential.RdBu )
+fig = px.pie(df, values='Credits Consumed', names='Pipeline Name',title='Pipeline Name and Credits Consumed')
 fig1 = px.pie(df, values='Credits Consumed', names='Pipeline Status',title='Pipeline Status and Credits Consumed')
 fig.update_traces(textposition='inside')
 fig.update_layout(uniformtext_minsize=12, uniformtext_mode='hide')
+fig.update_layout(margin=dict(t=0, b=0, l=0, r=0))
 #fig.show()
 st.write(fig)
 st.write(fig1)
