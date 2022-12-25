@@ -1,6 +1,7 @@
 import snowflake.connector
 import time
 import streamlit as st
+st.set_page_config(layout="wide")
 import pandas as pd
 import streamlit.components.v1 as components
 from pandas.api.types import (
