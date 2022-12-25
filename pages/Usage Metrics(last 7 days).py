@@ -115,5 +115,9 @@ st.download_button(
     file_name='Usage Metrics(last 7 days).csv',
     mime='text/csv',
 )
+
+st.checkbox("Use container width", value=False, key="use_container_width")
+
+st.dataframe(df, use_container_width=st.session_state.use_container_width)
 #st.checkbox("Use container width", value=False, key="use_container_width")
-st.dataframe(filter_dataframe(df.style.highlight_max(axis=0, props='background-color:lightgreen;', subset=['Credits Consumed'])))                                                       
+st.dataframe(filter_dataframe(df.style.highlight_max(axis=0, props='background-color:lightgreen;', subset=['Credits Consumed'])),use_container_width=st.session_state.use_container_width)                                                       
