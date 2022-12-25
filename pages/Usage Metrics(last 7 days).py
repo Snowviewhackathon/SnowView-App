@@ -1,6 +1,7 @@
 
 import snowflake.connector
 import streamlit as st
+st.set_page_config(layout="wide")
 import pandas as pd
 import streamlit.components.v1 as components
 from pandas.api.types import (
@@ -116,8 +117,9 @@ st.download_button(
     mime='text/csv',
 )
 
-st.checkbox("Use container width", value=False, key="use_container_width")
-
-st.dataframe(df, use_container_width=st.session_state.use_container_width)
 #st.checkbox("Use container width", value=False, key="use_container_width")
-st.dataframe(filter_dataframe(df.style.highlight_max(axis=0, props='background-color:lightgreen;', subset=['Credits Consumed'])),use_container_width=st.session_state.use_container_width)                                                       
+
+#st.dataframe(df, use_container_width=st.session_state.use_container_width)
+#st.checkbox("Use container width", value=False, key="use_container_width")
+st.dataframe(filter_dataframe(df.style.highlight_max(axis=0, props='background-color:lightgreen;', subset=['Credits Consumed'])))
+             #,use_container_width=st.session_state.use_container_width)                                                       
