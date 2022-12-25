@@ -13,9 +13,14 @@ data = {
 df = pd.DataFrame(data)
 
 print(df) 
-st.dataframe(df.style.highlight_max(axis=0, props='background-color:green;', subset=['A','B'])
+#st.dataframe(df.style.highlight_max(axis=0, props='background-color:green;', subset=['A','B'])
          .highlight_min(axis=0, props='background-color:red;', subset=['A','B']))
 #st.dataframe(df)
-authenticator = stauth.Authenticate(names, usernames, hashed_passwords,
-    "SIPL_dashboard", "abcdef")
-authenticator.logout("Logout", "sidebar")
+st.dataframe(df.style.set_table_styles(
+       [{
+           'selector': 'th',
+           'props': [
+               ('background-color', 'black'),
+               ('color', 'cyan')]
+       }]))
+
