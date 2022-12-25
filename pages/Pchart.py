@@ -1,9 +1,8 @@
 import plotly.express as px
 import streamlit as st
-import plotly.express as px
 import snowflake.connector
 import pandas as pd
-import matplotlib.pyplot as plot
+
 
 my_cnx = snowflake.connector.connect(**st.secrets["snowflake"])
 my_cur = my_cnx.cursor() 
@@ -12,10 +11,10 @@ my_cur.execute("SELECT PIPELINE_NAME,PIPELINE_EXECUTOR,PIPELINE_STATUS,PIPELINE_
 res = my_cur.fetchall()
 df= pd.DataFrame(res, columns=['Pipeline Name','Pipeline Executor','Pipeline Status','Pipeline Start Time','Pipeline End Time','Pipeline Execution Time (in seconds)','Credits Consumed','Error Details'])
 
-# This dataframe has 244 lines, but 4 distinct values for `day`
-#df = px.data.res()
-fig = px.pie(df, values='Credits Consumed', names='Pipeline Name')
-fig1 = px.pie(df, values='Credits Consumed', names='Pipeline Status')
+fig = px.pie(df, values='Credits Consumed', names='Pipeline Name',title='Pipeline Name and Credits Consumed',color_discrete_sequence=px.colors.sequential.RdBu )
+fig1 = px.pie(df, values='Credits Consumed', names='Pipeline Status',title='Pipeline Status and Credits Consumed')
+fig.update_traces(textposition='inside')
+fig.update_layout(uniformtext_minsize=12, uniformtext_mode='hide')
 #fig.show()
 st.write(fig)
 st.write(fig1)
