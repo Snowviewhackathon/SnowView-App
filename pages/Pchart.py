@@ -16,3 +16,14 @@ df= pd.DataFrame(res, columns=['Pipeline Name','Pipeline Executor','Pipeline Sta
 fig = px.pie(df, values='Credits Consumed', names='Pipeline Name')
 #fig.show()
 st.write(fig)
+
+import pandas as pd 
+data = [['tim', 1], ['nick', 1], ['dick', 0]] 
+df = pd.DataFrame(data, columns = ['Name', 'EMI_Paid']) 
+
+
+import matplotlib.pyplot as  plt
+plt=df.plot.pie(y='EMI_Paid', figsize=(5,5),labels=df['Name'])
+#plt.show()
+st.write(plt)
+
