@@ -103,4 +103,4 @@ st.markdown(
  )
 #st.dataframe(filter_dataframe(df))
 st.dataframe(df)
-st.line_chart(df, x="Pipeline Start Time", y="Credits Consumed")
+#st.line_chart(df, x="Pipeline Start Time", y="Credits Consumed")
