@@ -20,9 +20,8 @@ def filter_dataframe(df: pd.DataFrame) -> pd.DataFrame:
     modify = st.checkbox("Add filters")
 
     if not modify:
-        #df1=df.head(15)
-        #return df1 
-        return df
+        df1=df.head(15)
+        return df1 
     
     df = df.copy()
 
@@ -103,11 +102,5 @@ st.markdown(
      unsafe_allow_html=True
  )
 #st.dataframe(filter_dataframe(df))
-#st.dataframe(df)
-#result =st.button('Credits Consumed Chart')
-#st.write(result)
-#if result:   
- #   st.write('test')
+st.dataframe(df)
 st.line_chart(df, x="Pipeline Start Time", y="Credits Consumed")
-#else:
- #  st.line_chart(df, x="Pipeline Start Time", y=["Pipeline Execution Time (in seconds)"])
