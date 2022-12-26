@@ -102,11 +102,11 @@ st.markdown(
      unsafe_allow_html=True
  )
 #st.dataframe(filter_dataframe(df))
-#st.dataframe(df)
+st.dataframe(df)
 #result =st.button('Credits Consumed Chart')
 #st.write(result)
 #if result:   
  #   st.write('test')
-st.area_chart(df, x="Pipeline Start Time", y="Credits Consumed")
+#st.area_chart(df, x="Pipeline Start Time", y="Credits Consumed")
 #else:
-st.line_chart(df, x="Pipeline Name", y="Credits Consumed")
+#st.line_chart(df, x="Pipeline Name", y="Credits Consumed")
