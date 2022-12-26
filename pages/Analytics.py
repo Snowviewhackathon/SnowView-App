@@ -1,7 +1,5 @@
 import snowflake.connector
-import time
 import streamlit as st
-st.set_page_config(layout="wide")
 import pandas as pd
 import streamlit.components.v1 as components
 from pandas.api.types import (
@@ -10,10 +8,6 @@ from pandas.api.types import (
     is_numeric_dtype,
     is_object_dtype,
 ) 
-
-def convert_df(df):
-    # IMPORTANT: Cache the conversion to prevent computation on every rerun
-    return df.to_csv().encode('utf-8')
 
 def filter_dataframe(df: pd.DataFrame) -> pd.DataFrame:
     """
@@ -26,9 +20,8 @@ def filter_dataframe(df: pd.DataFrame) -> pd.DataFrame:
     modify = st.checkbox("Add filters")
 
     if not modify:
-        #df1=df.head(15)
-        #return df1 
-        return df
+        df1=df.head(15)
+        return df1 
     
     df = df.copy()
 
@@ -50,7 +43,7 @@ def filter_dataframe(df: pd.DataFrame) -> pd.DataFrame:
                 left, right = st.columns((1, 20))
                 left.write("↳")
                
-                if is_categorical_dtype(df[column]) or df[column].nunique() < 10: 
+                if is_categorical_dtype(df[column]) or df[column].nunique() < 10:
                     user_cat_input = right.multiselect(
                         f"Values for {column}",
                         df[column].unique(),
@@ -91,11 +84,11 @@ def filter_dataframe(df: pd.DataFrame) -> pd.DataFrame:
 my_cnx = snowflake.connector.connect(**st.secrets["snowflake"])
 my_cur = my_cnx.cursor() 
 my_cur.execute("SELECT CURRENT_USER(), CURRENT_ACCOUNT(), CURRENT_REGION()")
-my_cur.execute("SELECT PIPELINE_NAME,PIPELINE_EXECUTOR,PIPELINE_STATUS,PIPELINE_START_TIME,PIPELINE_END_TIME,PIPELINE_EXECUTION_TIME,CREDITS_CONSUMED_FOR_PIPELINE_EXECUTION,ERROR_DETAILS FROM SNOWVIEW_AUDIT_HISTORY ORDER BY PIPELINE_START_TIME DESC")
+my_cur.execute("SELECT PIPELINE_NAME,PIPELINE_EXECUTOR,PIPELINE_STATUS,PIPELINE_START_TIME,PIPELINE_END_TIME,PIPELINE_EXECUTION_TIME,CREDITS_CONSUMED_FOR_PIPELINE_EXECUTION,ERROR_DETAILS FROM SNOWVIEW_AUDIT_VW")
 res = my_cur.fetchall()
 df= pd.DataFrame(res, columns=['Pipeline Name','Pipeline Executor','Pipeline Status','Pipeline Start Time','Pipeline End Time','Pipeline Execution Time (in seconds)','Credits Consumed','Error Details'])
 st.markdown(f'<h1 style="color:#FFFFFF;font-size:48px;">{"❄️SnowView"}</h1>', unsafe_allow_html=True)
-st.markdown(f'<h1 style="color:#FFFFFF;font-size:24px;text-align: center;">{"Historical Usage Metrics"}</h1>', unsafe_allow_html=True)   
+#st.markdown(f'<h1 style="color:#FFFFFF;font-size:24px;text-align: center;">{"Historical Usage Metrics"}</h1>', unsafe_allow_html=True)   
 st.markdown(
      f"""
      <style>
@@ -108,15 +101,12 @@ st.markdown(
      """,
      unsafe_allow_html=True
  )
-csv = convert_df(df)
-st.download_button(
-    label="Download data as CSV",
-    data=csv,
-    file_name='Historical Usage Metrics.csv',
-    mime='text/csv',
-)
-#with st.spinner('Wait for it...'):
-#    time.sleep(5)
-#st.success('Done!')
-st.dataframe(filter_dataframe(df))
-#st.line_chart(df)
+#st.dataframe(filter_dataframe(df))
+#st.dataframe(df)
+#result =st.button('Credits Consumed Chart')
+#st.write(result)
+#if result:   
+ #   st.write('test')
+st.line_chart(df, x="Pipeline Start Time", y=["Credits Consumed"])
+#else:
+ #  st.line_chart(df, x="Pipeline Start Time", y=["Pipeline Execution Time (in seconds)"])
