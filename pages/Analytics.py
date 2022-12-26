@@ -107,7 +107,7 @@ st.markdown(
 #st.write(result)
 #if result:   
  #   st.write('test')
-st.line_chart(df)    
-#st.line_chart(df,x="Pipeline Start Time", y=["Credits Consumed"])
+#st.line_chart(df)    
+st.line_chart(df,x="Pipeline Start Time", y=["Credits Consumed"])
 #else:
  #  st.line_chart(df,x="Pipeline Start Time",y=["Pipeline Execution Time (in seconds)"])
