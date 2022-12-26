@@ -2,7 +2,7 @@ import snowflake.connector
 import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
-import numpy as np
+import plotly.express as px
 import streamlit.components.v1 as components
 from pandas.api.types import (
     is_categorical_dtype,
@@ -111,7 +111,8 @@ st.markdown(
  #   st.write('test')
 ##st.area_chart(df, x="Pipeline Start Time", y="Credits Consumed")
 #else:
-st.line_chart(df, x='Pipeline Name', y='Credits Consumed')
+fig = px.line_chart(df, x='Pipeline Name', y='Credits Consumed')
+fig.show()
 
 ##y = df.columns
 #x = pd.DataFrame(res, columns=['Pipeline Status'])
