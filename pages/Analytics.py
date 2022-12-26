@@ -108,7 +108,7 @@ st.markdown(
 #st.write(result)
 #if result:   
  #   st.write('test')
-st.area_chart(df, x="Pipeline Start Time", y="Credits Consumed")
+#st.area_chart(df, x="Pipeline Start Time", y="Credits Consumed")
 #else:
-#st.line_chart(df[['Pipeline Name','Credits Consumed']])
-st.line_chart(df, x="Pipeline Name", y="Credits Consumed")
+st.line_chart(df[['Pipeline Name','Credits Consumed']])
+#st.line_chart(df, x="Pipeline Name", y="Credits Consumed")
