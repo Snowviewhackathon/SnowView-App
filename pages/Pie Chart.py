@@ -111,6 +111,7 @@ st.markdown(
  #   st.write('test')
 ##st.area_chart(df, x="Pipeline Start Time", y="Credits Consumed")
 #else:
+df = px.data.gapminder()
 fig = px.line_chart(df, x='Pipeline Name', y='Credits Consumed')
 fig.show()
 
