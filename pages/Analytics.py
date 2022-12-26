@@ -1,6 +1,7 @@
 import snowflake.connector
 import streamlit as st
 import pandas as pd
+import numpy as np
 import streamlit.components.v1 as components
 from pandas.api.types import (
     is_categorical_dtype,
@@ -109,4 +110,5 @@ st.markdown(
  #   st.write('test')
 st.area_chart(df, x="Pipeline Start Time", y="Credits Consumed")
 #else:
-#st.line_chart(df, x="Pipeline Name", y="Credits Consumed")
+#st.line_chart(df[['Pipeline Name','Credits Consumed']])
+st.line_chart(df, x="Pipeline Name", y="Credits Consumed")
