@@ -118,5 +118,5 @@ st.download_button(
 #with st.spinner('Wait for it...'):
 #    time.sleep(5)
 #st.success('Done!')
-#st.dataframe(filter_dataframe(df))
-st.line_chart(df)
+st.dataframe(filter_dataframe(df))
+#st.line_chart(df)
