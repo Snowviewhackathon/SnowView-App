@@ -1,5 +1,7 @@
 import snowflake.connector
 import streamlit as st
+
+import numpy as np
 import pandas as pd
 
 
@@ -16,8 +18,6 @@ st.write(df)
 #st.line_chart(df, x=['Pipeline_Start_Time'], y=['Credits_Consumed'])
 st.line_chart(df)
 #st.area_chart(df)
-
-import numpy as np
 
 chart_data = pd.DataFrame(
     np.random.randn(20, 3),
