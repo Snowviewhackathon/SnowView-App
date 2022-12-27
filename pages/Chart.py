@@ -20,7 +20,7 @@ st.write(df)
 #st.area_chart(df)
 #df.plot( 'PIPELINE_NAME' , 'CREDITS_CONSUMED_FOR_PIPELINE_EXECUTION' )
 #fig=px.line(df)
-st.line_chart(data=None, *, x='PIPELINE_NAME', y='PIPELINE_NAME', width=20, height=10)
+st.line_chart(data=df,  x='PIPELINE_NAME', y='PIPELINE_NAME', width=20, height=10)
               #, use_container_width=True)
 #st.write(fig)
 
