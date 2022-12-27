@@ -1,6 +1,6 @@
 import snowflake.connector
 import streamlit as st
-import numpy as np
+st.set_page_config(layout="wide")
 import pandas as pd
 
 my_cnx = snowflake.connector.connect(**st.secrets["snowflake"])
