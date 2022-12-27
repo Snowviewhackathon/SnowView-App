@@ -18,7 +18,7 @@ st.write(df)
 #st.line_chart(df, x=['Pipeline_Start_Time'], y=['Credits_Consumed'])
 #st.line_chart(df)
 #st.area_chart(df)
-st.write(df_days_calories.plot( 'PIPELINE_NAME' , 'CREDITS_CONSUMED_FOR_PIPELINE_EXECUTION' ))
+st.write(df.plot( 'PIPELINE_NAME' , 'CREDITS_CONSUMED_FOR_PIPELINE_EXECUTION' ))
 
 chart_data = pd.DataFrame(
     np.random.randn(20, 3),
