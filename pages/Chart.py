@@ -26,8 +26,7 @@ df_new = df_new.set_index(' PIPELINE_START_TIME')
 
 
 
-c = alt.Chart(df, title='Credits consumed by piplines').mark_line().encode(
-     x='Pipeline Name', y='Credits_Consumed', color='parameter')
+c = alt.Chart(df, title='Credits consumed by piplines').mark_line().encode(y='Credits_Consumed', color='parameter')
 
 st.altair_chart(c, use_container_width=True)
 
