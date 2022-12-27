@@ -1,6 +1,6 @@
 import snowflake.connector
 import streamlit as st
-
+import plotly.express as px
 import numpy as np
 import pandas as pd
 
@@ -18,11 +18,9 @@ st.write(df)
 #st.line_chart(df, x=['Pipeline_Start_Time'], y=['Credits_Consumed'])
 #st.line_chart(df)
 #st.area_chart(df)
-df.plot( 'PIPELINE_NAME' , 'CREDITS_CONSUMED_FOR_PIPELINE_EXECUTION' )
+#df.plot( 'PIPELINE_NAME' , 'CREDITS_CONSUMED_FOR_PIPELINE_EXECUTION' )
+fig=px.line(df)
+st.write(fig)
 
-chart_data = pd.DataFrame(
-    np.random.randn(20, 3),
-    columns=['a', 'b', 'c'])
 
-st.line_chart(chart_data)
 
