@@ -25,10 +25,15 @@ df_new = df_new.set_index(' PIPELINE_START_TIME')
 #st.area_chart(df_new)
 
 
-
-c = alt.Chart(df, title='Credits consumed by piplines').mark_line().encode(x='PIPELINE',y='Credits', color='parameter')
+df_melted = pd.melt(df,id_vars=['PIPELINE_NAME'],var_name='parameter', value_name='value')
+c = alt.Chart(df_melted, title='measure of different elements over time').mark_line().encode(
+     x='date', y='value', color='parameter')
 
 st.altair_chart(c, use_container_width=True)
+
+#c = alt.Chart(df, title='Credits consumed by piplines').mark_line().encode(x='PIPELINE',y='Credits', color='parameter')
+
+#st.altair_chart(c, use_container_width=True)
 
 
 
