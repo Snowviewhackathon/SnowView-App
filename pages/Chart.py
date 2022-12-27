@@ -18,7 +18,7 @@ res_new=my_cur_new.fetchall()
 df= pd.DataFrame(res, columns=['PIPELINE_NAME','CREDITS_CONSUMED_FOR_PIPELINE_EXECUTION'])
 df_new= pd.DataFrame(res_new, columns=[' PIPELINE_START_TIME','CREDITS_CONSUMED_FOR_PIPELINE_EXECUTION'])
 #st.area_chart(df)
-df = df.set_index('PIPELINE_NAME')
+#df = df.set_index('PIPELINE_NAME')
 df_new = df_new.set_index(' PIPELINE_START_TIME')
 #st.line_chart(df,width = 10)
 
@@ -26,7 +26,7 @@ df_new = df_new.set_index(' PIPELINE_START_TIME')
 
 
 
-c = alt.Chart(df, title='Credits consumed by piplines').mark_line().encode(y='Credits_Consumed', color='parameter')
+c = alt.Chart(df, title='Credits consumed by piplines').mark_line().encode(x='PIPELINE',y='Credits', color='parameter')
 
 st.altair_chart(c, use_container_width=True)
 
