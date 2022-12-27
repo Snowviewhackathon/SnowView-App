@@ -12,8 +12,8 @@ my_cur = my_cnx.cursor()
 my_cur.execute("SELECT PIPELINE_START_TIME,CREDITS_CONSUMED_FOR_PIPELINE_EXECUTION FROM SNOWVIEW_AUDIT_VW")
 res = my_cur.fetchall()
 df= pd.DataFrame(res, columns=['Pipeline_Start_Time','Credits_Consumed'])
-st.line_chart(df)
-#st.area_chart(df, x="Pipeline Name", y="Credits Consumed")
+#st.line_chart(df)
+st.area_chart(df)
 
 import numpy as np
 
