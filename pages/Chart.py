@@ -19,3 +19,12 @@ df= pd.DataFrame(res, columns=['Pipeline Name','Pipeline Executor','Pipeline Sta
 st.line_chart(df, x="Pipeline_Start_Time", y="Credits_Consumed")
 #st.area_chart(df, x="Pipeline Name", y="Credits Consumed")
 
+import pandas as pd
+import numpy as np
+
+chart_data = pd.DataFrame(
+    np.random.randn(20, 3),
+    columns=['a', 'b', 'c'])
+
+st.line_chart(chart_data)
+
