@@ -1,11 +1,7 @@
 import snowflake.connector
 import streamlit as st
-import plotly.express as px
 import numpy as np
 import pandas as pd
-
-
-
 
 my_cnx = snowflake.connector.connect(**st.secrets["snowflake"])
 my_cur = my_cnx.cursor() 
@@ -14,19 +10,11 @@ my_cur = my_cnx.cursor()
 my_cur.execute("SELECT PIPELINE_NAME,CREDITS_CONSUMED_FOR_PIPELINE_EXECUTION FROM SNOWVIEW_AUDIT_VW")
 res = my_cur.fetchall()
 #df= pd.DataFrame(res, columns=['Pipeline Name','Pipeline Executor','Pipeline Status','Pipeline Start Time','Pipeline End Time','Pipeline Execution Time (in seconds)','Credits Consumed','Error Details'])
-
 df= pd.DataFrame(res, columns=['PIPELINE_NAME','CREDITS_CONSUMED_FOR_PIPELINE_EXECUTION'])
-#st.write(df)
-#st.line_chart(df, x=['Pipeline_Start_Time'], y=['Credits_Consumed'])
-#st.line_chart(df)
 #st.area_chart(df)
-#df.plot( 'PIPELINE_NAME' , 'CREDITS_CONSUMED_FOR_PIPELINE_EXECUTION' )
-#fig=px.line(df)
-df = df.rename(columns={'PIPELINE_NAME':'index'}).set_index('index')
+df = df.set_index('PIPELINE_NAME')
 st.line_chart(df,use_container_width=True)
-#st.line_chart(data=df, width=20, height=10)
-              #, use_container_width=True)
-#st.write(fig)
+
 
 
 
