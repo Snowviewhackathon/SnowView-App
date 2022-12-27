@@ -86,7 +86,7 @@ my_cur = my_cnx.cursor()
 my_cur.execute("SELECT CURRENT_USER(), CURRENT_ACCOUNT(), CURRENT_REGION()")
 my_cur.execute("SELECT PIPELINE_NAME,PIPELINE_EXECUTOR,PIPELINE_STATUS,PIPELINE_START_TIME,PIPELINE_END_TIME,PIPELINE_EXECUTION_TIME,CREDITS_CONSUMED_FOR_PIPELINE_EXECUTION,ERROR_DETAILS FROM SNOWVIEW_AUDIT_VW")
 res = my_cur.fetchall()
-df= pd.DataFrame(res, columns=['Pipeline Name','Pipeline Executor','Pipeline Status','Pipeline Start Time','Pipeline End Time','Pipeline Execution Time (in seconds)','Credits Consumed','Error Details'])
+df= pd.DataFrame(res, columns=['Pipeline Name','Pipeline Executor','Pipeline Status','Pipeline_Start_Time','Pipeline End Time','Pipeline Execution Time (in seconds)','Credits_Consumed','Error Details'])
 st.markdown(f'<h1 style="color:#FFFFFF;font-size:48px;">{"❄️SnowView"}</h1>', unsafe_allow_html=True)
 #st.markdown(f'<h1 style="color:#FFFFFF;font-size:24px;text-align: center;">{"Historical Usage Metrics"}</h1>', unsafe_allow_html=True)   
 st.markdown(
@@ -101,13 +101,7 @@ st.markdown(
      """,
      unsafe_allow_html=True
  )
-#st.dataframe(filter_dataframe(df))
-#st.dataframe(df)
-#result =st.button('Credits Consumed Chart')
-#st.write(result)
-#if result:   
- #   st.write('test')
-st.area_chart(df, x='Pipeline Start Time', y='Credits Consumed')
+st.area_chart(df, x="Pipeline_Start_Time", y="Credits_Consumed")
 #else:
-st.line_chart(df, x="Pipeline Name", y="Credits Consumed")
+#st.line_chart(df, x="Pipeline Name", y="Credits Consumed")
 
