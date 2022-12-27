@@ -101,7 +101,8 @@ st.markdown(
      """,
      unsafe_allow_html=True
  )
-st.area_chart(df, x="Pipeline_Start_Time", y="Credits_Consumed")
+st.line_chart(df, x="Pipeline_Start_Time", y="Credits_Consumed")
 #else:
-#st.line_chart(df, x="Pipeline Name", y="Credits Consumed")
+
+#st.area_chart(df, x="Pipeline Name", y="Credits Consumed")
 
