@@ -3,6 +3,7 @@ import streamlit as st
 st.set_page_config(layout="wide")
 import pandas as pd
 import altair as alt
+import numpy as np
 
 my_cnx = snowflake.connector.connect(**st.secrets["snowflake"])
 my_cur = my_cnx.cursor() 
@@ -19,7 +20,7 @@ df_new= pd.DataFrame(res_new, columns=[' PIPELINE_START_TIME','CREDITS_CONSUMED_
 #st.area_chart(df)
 df = df.set_index('PIPELINE_NAME')
 df_new = df_new.set_index(' PIPELINE_START_TIME')
-st.line_chart(df,width = 10, height = 210,use_container_width=True)
+st.line_chart(df,width = 10)
 
 st.area_chart(df_new)
 
