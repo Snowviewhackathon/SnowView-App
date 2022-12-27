@@ -14,8 +14,8 @@ res = my_cur.fetchall()
 df= pd.DataFrame(res, columns=['PIPELINE_NAME','CREDITS_CONSUMED_FOR_PIPELINE_EXECUTION'])
 st.write(df)
 #st.line_chart(df, x=['Pipeline_Start_Time'], y=['Credits_Consumed'])
-#st.line_chart(df)
-st.area_chart(df)
+st.line_chart(df)
+#st.area_chart(df)
 
 import numpy as np
 
