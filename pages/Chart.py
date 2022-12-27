@@ -14,6 +14,7 @@ df= pd.DataFrame(res, columns=['PIPELINE_NAME','CREDITS_CONSUMED_FOR_PIPELINE_EX
 #st.area_chart(df)
 df = df.set_index('PIPELINE_NAME')
 st.line_chart(df,use_container_width=True)
+st.area_chart(df)
 
 
 
