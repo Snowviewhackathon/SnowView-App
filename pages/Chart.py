@@ -19,7 +19,7 @@ df_new= pd.DataFrame(res_new, columns=[' PIPELINE_START_TIME','CREDITS_CONSUMED_
 df = df.set_index('PIPELINE_NAME')
 df_new = df_new.set_index(' PIPELINE_START_TIME')
 #st.line_chart(df,use_container_width=True)
-st.bar_chart(df,width=50)
+st.bar_chart(df,width=10)
 st.area_chart(df_new)
 
 
