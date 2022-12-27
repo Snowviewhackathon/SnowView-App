@@ -20,19 +20,14 @@ df_new= pd.DataFrame(res_new, columns=[' PIPELINE_START_TIME','CREDITS_CONSUMED_
 #st.area_chart(df)
 df = df.set_index('PIPELINE_NAME')
 df_new = df_new.set_index(' PIPELINE_START_TIME')
-st.line_chart(df,width = 10)
+#st.line_chart(df,width = 10)
 
-st.area_chart(df_new)
+#st.area_chart(df_new)
 
 
-df = pd.DataFrame(
-                np.random.rand(10, 4),
-                columns= ["NO2","C2H5CH","VOC","CO"])
-# generate a date range to be used as the x axis
-df['date'] =  pd.date_range("2014-01-01", periods=10, freq="m")
-df_melted = pd.melt(df,id_vars=['date'],var_name='parameter', value_name='value')
-c = alt.Chart(df_melted, title='measure of different elements over time').mark_line().encode(
-     x='date', y='value', color='parameter')
+
+c = alt.Chart(df, title='Credits consumed by piplines').mark_line().encode(
+     x='Pipeline Name', y='Credits_Consumed', color='parameter')
 
 st.altair_chart(c, use_container_width=True)
 
