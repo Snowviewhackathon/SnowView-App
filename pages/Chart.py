@@ -2,8 +2,7 @@ import snowflake.connector
 import streamlit as st
 st.set_page_config(layout="wide")
 import pandas as pd
-import altair as alt
-import numpy as np
+
 
 my_cnx = snowflake.connector.connect(**st.secrets["snowflake"])
 my_cur = my_cnx.cursor() 
@@ -17,23 +16,11 @@ res_new=my_cur_new.fetchall()
 #df= pd.DataFrame(res, columns=['Pipeline Name','Pipeline Executor','Pipeline Status','Pipeline Start Time','Pipeline End Time','Pipeline Execution Time (in seconds)','Credits Consumed','Error Details'])
 df= pd.DataFrame(res, columns=['PIPELINE_NAME','CREDITS_CONSUMED_FOR_PIPELINE_EXECUTION'])
 df_new= pd.DataFrame(res_new, columns=[' PIPELINE_START_TIME','CREDITS_CONSUMED_FOR_PIPELINE_EXECUTION'])
-#st.area_chart(df)
-#df = df.set_index('PIPELINE_NAME')
+df = df.set_index('PIPELINE_NAME')
 df_new = df_new.set_index(' PIPELINE_START_TIME')
-#st.line_chart(df,width = 10)
+st.line_chart(df)
+st.area_chart(df_new)
 
-#st.area_chart(df_new)
-
-
-df_melted = pd.melt(df,id_vars=['PIPELINE_NAME'],var_name='parameter', value_name='value')
-c = alt.Chart(df_melted, title='measure of different elements over time').mark_line().encode(
-     x='date', y='value', color='parameter')
-
-st.altair_chart(c, use_container_width=True)
-
-#c = alt.Chart(df, title='Credits consumed by piplines').mark_line().encode(x='PIPELINE',y='Credits', color='parameter')
-
-#st.altair_chart(c, use_container_width=True)
 
 
 
