@@ -23,7 +23,7 @@ df= pd.DataFrame(res, columns=['PIPELINE_NAME','CREDITS_CONSUMED_FOR_PIPELINE_EX
 #df.plot( 'PIPELINE_NAME' , 'CREDITS_CONSUMED_FOR_PIPELINE_EXECUTION' )
 #fig=px.line(df)
 df = df.rename(columns={'PIPELINE_NAME':'index'}).set_index('index')
-st.line_chart(df,width=50, height=100)
+st.line_chart(df,use_container_width=True)
 #st.line_chart(data=df, width=20, height=10)
               #, use_container_width=True)
 #st.write(fig)
