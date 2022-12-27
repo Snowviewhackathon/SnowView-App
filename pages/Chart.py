@@ -13,9 +13,9 @@ my_cur.execute("SELECT PIPELINE_START_TIME,CREDITS_CONSUMED_FOR_PIPELINE_EXECUTI
 res = my_cur.fetchall()
 df= pd.DataFrame(res, columns=['Pipeline_Start_Time','Credits_Consumed'])
 st.write(df)
-st.line_chart(df, x=['Pipeline_Start_Time'], y=['Credits_Consumed'])
+#st.line_chart(df, x=['Pipeline_Start_Time'], y=['Credits_Consumed'])
 #st.line_chart(df)
-#st.area_chart(df)
+st.area_chart(df)
 
 import numpy as np
 
