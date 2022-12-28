@@ -10,7 +10,7 @@ my_cur_new.execute("SELECT PIPELINE_EXECUTION_TIME,CREDITS_CONSUMED_FOR_PIPELINE
 res_new=my_cur_new.fetchall()
 df_new= pd.DataFrame(res_new, columns=['PIPELINE EXECUTION TIME','CREDITS CONSUMED'])
 fig = px.area(df_new, x='PIPELINE EXECUTION TIME', y='CREDITS CONSUMED',title='Analytics for Credits consumed_area_chart')
-fig.update_xaxes(titlefont=dict(family='Rockwell',color='crimson',size=10),tickfont=dict(family='Rockwell', size=5))
+fig.update_xaxes(titlefont=dict(family='Rockwell',color='crimson',size=10),tickfont=dict(family='Rockwell', size=20))
 fig.update_yaxes(titlefont=dict(color='crimson',size=10))
 
 st.write(fig)
