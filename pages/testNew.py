@@ -19,7 +19,7 @@ fig.update_layout(
             titlefont=dict(size=10),
     xaxis=dict(
             titlefont=dict(size=10),
-            tickfont = dict(size=10),
+            tickfont=list(size=10),
         ))
 st.write(fig)
 
