@@ -11,8 +11,8 @@ my_cur.execute("SELECT PIPELINE_NAME,PIPELINE_EXECUTOR,PIPELINE_STATUS,PIPELINE_
 res = my_cur.fetchall()
 df= pd.DataFrame(res, columns=['Pipeline Name','Pipeline Executor','Pipeline Status','Pipeline Start Time','Pipeline End Time','Pipeline Execution Time (in seconds)','Credits Consumed','Error Details'])
 
-fig = px.pie(df, values='Credits Consumed', names='Pipeline Name',title='Pipeline Name and Credits Consumed')
-fig1 = px.pie(df, values='Pipeline Execution Time (in seconds)', names='Pipeline Name',title='Pipeline Status and Credits Consumed')
+fig = px.pie(df, values='Credits Consumed', names='Pipeline Name',title='Analytics for Credits consumed')
+fig1 = px.pie(df, values='Pipeline Execution Time (in seconds)', names='Pipeline Name',title='Analytics for Pipeline Execution time')
 fig.update_traces(textposition='inside')
 fig1.update_traces(textposition='inside')
 fig.update_layout(legend_title_text='Pipeline Names')
