@@ -12,7 +12,7 @@ res = my_cur.fetchall()
 df= pd.DataFrame(res, columns=['PIPELINE_NAME','PIPELINE_START_TIME','CREDITS_CONSUMED_FOR_PIPELINE_EXECUTION'])
 st.write(df)
 #df_nxt = df.drop_duplicates(subset='Pipeline Start Time')
-df_wide = df.pivot(index ='PIPELINE_START_TIME', columns = 'PIPELINE_NAME',  Credits = 'CREDITS_CONSUMED_FOR_PIPELINE_EXECUTION').reset_index()
+df_wide = df.pivot(index ='PIPELINE_START_TIME', columns = 'PIPELINE_NAME',  values = 'CREDITS_CONSUMED_FOR_PIPELINE_EXECUTION').reset_index()
 st.write(df_wide)
 fig1 = px.line(
     data_frame = df_wide
