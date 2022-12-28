@@ -18,6 +18,7 @@ fig.update_traces(textposition='inside')
 #))
 #fig.update_layout(legend_title_text='Pipeline Names')
 fig.update_layout(showlegend=True, legend=dict(
+    legend_title_text='Pipeline Names',
     title_font_family='Courier New',
     font=dict(
         size=8
