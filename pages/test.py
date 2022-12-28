@@ -13,9 +13,16 @@ df= pd.DataFrame(res, columns=['Pipeline Name','Pipeline Executor','Pipeline Sta
 
 fig = px.pie(df, values='Credits Consumed', names='Pipeline Name',title='Pipeline Name and Credits Consumed')
 fig1 = px.pie(df, values='Credits Consumed', names='Pipeline Status',title='Pipeline Status and Credits Consumed')
-fig.update_traces(textposition='inside')
-fig.update_layout(legend=dict(title_font_family="Times New Roman",
+#fig.update_traces(textposition='inside')
+#fig.update_layout(legend=dict(title_font_family="Times New Roman",
                               font=dict(size= 5)
+#))
+#fig.update_layout(legend_title_text='Pipeline Names')
+fig.update_layout(showlegend=True, legend=dict(
+    title_font_family='Courier New',
+    font=dict(
+        size=8
+    )
 ))
 st.write(fig)
 st.write(fig1)
