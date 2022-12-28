@@ -10,7 +10,7 @@ my_cur_new.execute("SELECT PIPELINE_NAME,SUM(PIPELINE_EXECUTION_TIME) AS PIPELIN
 res_new=my_cur_new.fetchall()
 df_new= pd.DataFrame(res_new, columns=['PIPELINE NAME','PIPELINE EXECUTION TIME'])
 fig = px.area(df_new, x='PIPELINE NAME', y='PIPELINE EXECUTION TIME',title='Analytics for Credits consumed_area_chart')
-fig.update_xaxes(titlefont=dict(color='crimson',size=10),tickfont=dict(family='Rockwell', size=5))
+fig.update_xaxes(titlefont=dict(family='Rockwell',color='crimson',size=10),tickfont=dict(family='Rockwell', size=5))
 fig.update_yaxes(titlefont=dict(color='crimson',size=10))
 
 st.write(fig)
