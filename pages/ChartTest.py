@@ -24,7 +24,6 @@ fig3 = px.line(
     ,x = 'PIPELINE_START_TIME'
     ,y = 'CREDITS_CONSUMED_FOR_PIPELINE_EXECUTION'
     ,color = 'PIPELINE_NAME'
-    ,markers = True
 )
  
 #fig3.show()
