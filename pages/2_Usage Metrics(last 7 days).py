@@ -116,8 +116,6 @@ st.download_button(
     mime='text/csv',
 )
 
-#st.checkbox("Use container width", value=False, key="use_container_width")
-
-#st.dataframe(df, use_container_width=st.session_state.use_container_width)
-#st.checkbox("Use container width", value=False, key="use_container_width")
+with st.spinner('Wait for it...'):
+    time.sleep(5)
 st.dataframe(filter_dataframe(df))                                                     
