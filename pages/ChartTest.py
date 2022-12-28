@@ -22,3 +22,4 @@ fig1 = px.line(
  
 #fig1.show()
 st.write(fig1)
+
