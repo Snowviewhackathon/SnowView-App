@@ -20,7 +20,14 @@ df= pd.DataFrame(res, columns=['PIPELINE_NAME','Pipeline Start Time','CREDITS_CO
 #df = df.set_index('PIPELINE_NAME')
 st.write(df)
 df_wide = df.pivot(index = 'Pipeline Start Time', columns = 'PIPELINE_NAME', values = 'CREDITS_CONSUMED_FOR_PIPELINE_EXECUTION').reset_index()
-st.write(df_wide)
+fig1 = px.line(
+    data_frame = df_wide
+    ,x = 'Pipeline Start Time'
+    ,y = 'Snowpark : Snowpark Python Code'
+)
+ 
+#fig1.show()
+st.write(fig1)
 #st.line_chart(df)
 
 
