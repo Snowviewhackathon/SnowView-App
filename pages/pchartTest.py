@@ -2,6 +2,7 @@ import snowflake.connector
 import streamlit as st
 st.set_page_config(layout="wide")
 import pandas as pd
+import plotly.express as px
 
 
 my_cnx = snowflake.connector.connect(**st.secrets["snowflake"])
