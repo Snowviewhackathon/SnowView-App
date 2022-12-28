@@ -36,7 +36,7 @@ st.write(df_wide1)
 fig2 = px.line(
     data_frame = df_wide1
     ,x = 'PIPELINE_START_TIME'
-    ,y = ['Snowpark : Snowpark Python Code','Task : TASK_LOAD_AUDIT_HISTORY','Task : TASK_SP_LOAD_CSV_EXTERNAL_STAGE','Task : TASK_SP_LOAD_CSV_INTERNAL_STAGE']
+    ,y = ['FAILED','SUCCEEDED','SUCCESS']
 )
  
 #fig1.show()
