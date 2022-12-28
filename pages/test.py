@@ -15,7 +15,7 @@ fig = px.pie(df, values='Credits Consumed', names='Pipeline Name',title='Pipelin
 fig1 = px.pie(df, values='Credits Consumed', names='Pipeline Status',title='Pipeline Status and Credits Consumed')
 fig.update_traces(textposition='inside')
 fig.update_layout(legend=dict(title_font_family="Times New Roman",
-                              font=dict(size= 10)
+                              font=dict(size= 5)
 ))
 st.write(fig)
 st.write(fig1)
