@@ -31,15 +31,8 @@ res_new=my_cur_new.fetchall()
 df_neww= pd.DataFrame(res_new, columns=[ 'PIPELINE_STATUS','PIPELINE_START_TIME','CREDITS_CONSUMED_FOR_PIPELINE_EXECUTION'])
 #df_neww = df_neww.drop_duplicates(subset='PIPELINE_START_TIME')
 st.write(df_neww)
-df_wide1 = df_neww.pivot(index = 'PIPELINE_START_TIME', columns = 'PIPELINE_STATUS', values = 'CREDITS_CONSUMED_FOR_PIPELINE_EXECUTION').reset_index()
-st.write(df_wide1)
-fig2 = px.line(
-    data_frame = df_wide1
-    ,x = 'PIPELINE_START_TIME'
-    ,y = ['FAILED','SUCCEEDED','SUCCESS']
-)
- 
-#fig1.show()
+fig2 = px.area(df_neww, x="PIPELINE_START_TIME", y="CREDITS_CONSUMED_FOR_PIPELINE_EXECUTION", color="PIPELINE_STATUS")
+#, line_group="country")
 st.write(fig2)
 
 
