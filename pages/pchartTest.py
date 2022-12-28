@@ -21,8 +21,8 @@ df= pd.DataFrame(res, columns=['PIPELINE_NAME','Pipeline Start Time','CREDITS_CO
 #df = df.set_index('PIPELINE_NAME')
 st.write(df)
 df_wide = df.pivot(index = 'Pipeline Start Time', columns = 'PIPELINE_NAME', values = 'CREDITS_CONSUMED_FOR_PIPELINE_EXECUTION').reset_index()
-df_nxt = df_wide.drop_duplicates()
-st.write(df_wide)
+df_nxt = df_wide.drop_duplicates(subset='Pipeline Start Time')
+st.write(df_nxt)
 fig1 = px.line(
     data_frame = df_nxt
     ,x = 'Pipeline Start Time'
