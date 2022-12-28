@@ -1,5 +1,6 @@
 import pandas as pd
 import io, requests
+import plotly.express as px
 
 df = pd.read_csv(
     io.StringIO(
