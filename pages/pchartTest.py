@@ -29,6 +29,7 @@ my_cur_new = my_cnx.cursor()
 my_cur_new.execute("SELECT PIPELINE_NAME,PIPELINE_STATUS,CREDITS_CONSUMED_FOR_PIPELINE_EXECUTION FROM SNOWVIEW_AUDIT_VW")
 res_new=my_cur_new.fetchall()
 df_neww= pd.DataFrame(res_new, columns=['PIPELINE_STATUS',' PIPELINE_START_TIME','CREDITS_CONSUMED_FOR_PIPELINE_EXECUTION'])
+st.write(df_neww)
 df_wide1 = df_neww.pivot(index = 'PIPELINE_NAME', columns = 'PIPELINE_STATUS', values = 'CREDITS_CONSUMED_FOR_PIPELINE_EXECUTION').reset_index()
 st.write(df_wide1)
 fig2 = px.line(
