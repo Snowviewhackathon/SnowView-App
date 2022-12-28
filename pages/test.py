@@ -23,7 +23,7 @@ fig.update_layout(showlegend=True, legend=dict(
         size=8
     )
 ))
-fig2.update_layout(showlegend=True, legend=dict(
+fig1.update_layout(showlegend=True, legend=dict(
     title_font_family='Courier New',
     font=dict(
         size=8
