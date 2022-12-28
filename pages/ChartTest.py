@@ -17,7 +17,7 @@ st.write(df_wide)
 fig1 = px.line(
     data_frame = df_wide
     ,x = 'PIPELINE_START_TIME'
-    ,y = ['Snowpark : Snowpark Python Code','Task : TASK_LOAD_AUDIT_HISTORY','Task : TASK_SP_LOAD_CSV_EXTERNAL_STAGE','Task : TASK_SP_LOAD_CSV_INTERNAL_STAGE']
+    ,y = ['Snowpark : Snowpark Python Code','Task : TASK_LOAD_AUDIT_HISTORY','Task : TASK_SP_LOAD_CSV_EXTERNAL_STAGE']
 )
  
 #fig1.show()
