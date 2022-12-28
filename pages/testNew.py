@@ -16,7 +16,7 @@ fig.update_layout(
     width=500,
     height=500,
     yaxis=dict(
-            titlefont=dict(size=30),
+            titlefont=dict(size=10),
         ))
 st.write(fig)
 
