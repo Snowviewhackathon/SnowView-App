@@ -3,7 +3,6 @@ import streamlit as st
 st.set_page_config(layout="wide")
 import pandas as pd
 
-
 my_cnx = snowflake.connector.connect(**st.secrets["snowflake"])
 my_cur = my_cnx.cursor() 
 my_cur_new = my_cnx.cursor() 
