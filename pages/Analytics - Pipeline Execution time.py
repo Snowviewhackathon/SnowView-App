@@ -12,7 +12,7 @@ my_cur.execute("SELECT PIPELINE_NAME,SUM(PIPELINE_EXECUTION_TIME) AS PIPELINE_EX
 res = my_cur.fetchall()
 df= pd.DataFrame(res, columns=['PIPELINE NAME','PIPELINE EXECUTION TIME'])
 fig = px.line(df, x="PIPELINE NAME", y="PIPELINE EXECUTION TIME", title='Analytics for Pipeline Execution time')
-fig.update_xaxes(titlefont=dict(color='crimson',size=10),tickfont=dict(family='Rockwell', size=5))
+fig.update_xaxes(titlefont=dict(family='Rockwell',color='crimson',size=10),tickfont=dict(family='Rockwell', size=5))
 fig.update_yaxes(titlefont=dict(color='crimson',size=10))
 
    
