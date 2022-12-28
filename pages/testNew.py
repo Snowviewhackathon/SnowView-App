@@ -19,8 +19,8 @@ fig.update_layout(
             titlefont=dict(size=10),
     xaxis=dict(
             titlefont=dict(size=10),
+            tickfont = dict(size=10)
         )
         )
-fig.update_layout(yaxis_range=[0,0.9])
 st.write(fig)
 
