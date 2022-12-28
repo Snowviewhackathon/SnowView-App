@@ -19,7 +19,16 @@ fig1 = px.line(
     ,x = 'PIPELINE_START_TIME'
     ,y = ['Snowpark : Snowpark Python Code','Task : TASK_LOAD_AUDIT_HISTORY','Task : TASK_SP_LOAD_CSV_EXTERNAL_STAGE']
 )
+ fig3 = px.line(
+    data_frame = df
+    ,x = 'PIPELINE_START_TIME'
+    ,y = 'CREDITS_CONSUMED_FOR_PIPELINE_EXECUTION'
+    ,color = 'PIPELINE_NAME'
+    ,markers = True
+)
  
+#fig3.show()
 #fig1.show()
 st.write(fig1)
+st.write(fig3)
 
