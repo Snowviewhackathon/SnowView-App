@@ -24,7 +24,7 @@ df_wide = df.pivot(index = 'Pipeline Start Time', columns = 'PIPELINE_NAME', val
 fig1 = px.line(
     data_frame = df_wide
     ,x = 'Pipeline Start Time'
-    ,y = 'Snowpark : Snowpark Python Code'
+    ,y = ['Snowpark : Snowpark Python Code','Task : TASK_LOAD_AUDIT_HISTORY']
 )
  
 #fig1.show()
