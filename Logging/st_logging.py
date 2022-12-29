@@ -1,6 +1,7 @@
-
 import logging, os
 from time import strftime, gmtime
+from pathlib import Path
+
 
 class St_logging:
     def __init__(self):
@@ -15,9 +16,10 @@ class St_logging:
             # Creating logging message format  
             formatter = logging.Formatter('%(asctime)s :: %(levelname)s :: %(message)s',"%Y-%m-%d %H:%M:%S")
             # Log File Path
-            log_filepath = os.path.join(os.getcwd(),'Streamlit_Log')
+            #log_filepath = os.path.join(os.getcwd(),'Streamlit_Log')
+            log_filepath = Path(__file__).parent / "Streamlit_Log" 
             os.makedirs(log_filepath,exist_ok=True)
-            log_filename = os.path.join(log_filepath+'/st_log_file'+strftime('%Y-%m-%d %H.%M.%S',gmtime())+'_.log')
+            log_filename = (log_filepath+'/st_log_file'+strftime('%Y-%m-%d %H.%M.%S',gmtime())+'_.log')
             # Creating file handler which logs messages  
             self.file_handler = logging.FileHandler(log_filename)
             self.file_handler.setFormatter(formatter)
