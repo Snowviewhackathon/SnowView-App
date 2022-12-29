@@ -36,6 +36,7 @@ authenticator = stauth.Authenticate(names, usernames, hashed_passwords,
     "SIPL_dashboard", "abcdef")
 
 name, authentication_status, username = authenticator.login("Login", "main")
+logger.info('successfully logined as user'+name )
 
 if authentication_status == False:
     st.error("Username/password is incorrect")
@@ -69,5 +70,5 @@ if authentication_status:
     st.markdown(hide_st_style, unsafe_allow_html=True)
 
     authenticator.logout("Logout", "sidebar")
-logger.info('successfully logined as user'+name )
+
 st.snow()
