@@ -1,6 +1,6 @@
 import pickle
 from pathlib import Path
-import st_logging as log
+from Logging import st_logging as log
 import pandas as pd  # pip install pandas openpyxl
 import plotly.express as px  # pip install plotly-express
 import streamlit as st  # pip install streamlit
@@ -69,5 +69,5 @@ if authentication_status:
     st.markdown(hide_st_style, unsafe_allow_html=True)
 
     authenticator.logout("Logout", "sidebar")
-    logger.info('successfully logined as user'+name )
+logger.info('successfully logined as user'+name )
 st.snow()
