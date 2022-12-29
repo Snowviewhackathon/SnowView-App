@@ -1,7 +1,7 @@
 import logging, os
 from time import strftime, gmtime
 
-class st_logging:
+class St_logging:
     def __init__(self):
         self.file_handler=None
 
