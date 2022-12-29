@@ -26,7 +26,7 @@ hide_bar= """
 # --- USER AUTHENTICATION ---
 names = ["Aniket", "Venu"]
 usernames = ["Aniket_S", "Venu_B"]
-logger.info(f"successfully logined as user {name}")
+logger.info("successfully logined")
 # load hashed passwords
 file_path = Path(__file__).parent / "hashed_pw.pkl"
 with file_path.open("rb") as file:
