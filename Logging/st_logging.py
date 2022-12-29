@@ -18,8 +18,8 @@ class St_logging:
             # Log File Path
             #log_filepath = os.path.join(os.getcwd(),'Streamlit_Log')
             log_filepath = Path(__file__).parent / "Streamlit_Log" 
-            os.makedirs(log_filepath,exist_ok=True)
-            log_filename = (log_filepath+'/st_log_file'+strftime('%Y-%m-%d %H.%M.%S',gmtime())+'_.log')
+            #os.makedirs(log_filepath,exist_ok=True)
+            log_filename = log_filepath+'/st_log_file'+strftime('%Y-%m-%d %H.%M.%S',gmtime())+'_.log'
             # Creating file handler which logs messages  
             self.file_handler = logging.FileHandler(log_filename)
             self.file_handler.setFormatter(formatter)
