@@ -1,12 +1,13 @@
 import pickle
 from pathlib import Path
-
+import st_logging as log
 import pandas as pd  # pip install pandas openpyxl
 import plotly.express as px  # pip install plotly-express
 import streamlit as st  # pip install streamlit
 import streamlit_authenticator as stauth  # pip install streamlit-authenticator
 
-
+log_obj = log.St_logging()
+logger = log_obj.create_log()
 # emojis: https://www.webfx.com/tools/emoji-cheat-sheet/
 st.set_page_config(page_title="streamlit Dashboard", page_icon=":bar_chart:", layout="wide")
 
