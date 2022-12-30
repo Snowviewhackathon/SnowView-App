@@ -1,14 +1,11 @@
-### Generate keys
-
-
 import pickle
 from pathlib import Path
 
 import streamlit_authenticator as stauth
 
-names = ["Aniket", "Venu"]
-usernames = ["Aniket_S", "Venu_B"]
-passwords = ["1234", "123"]
+names = ["Aniket", "Venu","Pooja","Snowview_user"]
+usernames = ["Aniket_S", "Venu_B","Pooja_M","Snowview"]
+passwords = ["1234", "123","12345","Snowview#2022"]
 
 hashed_passwords = stauth.Hasher(passwords).generate()
 
