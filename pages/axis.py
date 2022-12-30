@@ -18,6 +18,6 @@ df= pd.DataFrame(res, columns=['PIPELINE NAME','CREDITS CONSUMED'])
 
 
 c = alt.Chart(df, title='measure of different elements over time').mark_line().encode(
-     x='date', y='value')
+     x='PIPELINE NAME', y='CREDITS CONSUMED')
 
 st.altair_chart(c, use_container_width=True)
