@@ -57,4 +57,4 @@ if authentication_status:
                 """
     st.markdown(hide_st_style, unsafe_allow_html=True)
     authenticator.logout("Logout", "sidebar")
-st.snow()
+    st.snow()
