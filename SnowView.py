@@ -6,7 +6,7 @@ import streamlit as st  # pip install streamlit
 import streamlit_authenticator as stauth  # pip install streamlit-authenticator
 
 
-st.set_page_config(page_title="streamlit Dashboard", page_icon=":bar_chart:", layout="wide")
+st.set_page_config(page_title="streamlit Dashboard", page_icon=":bar_chart:")
 
 hide_bar= """
     <style>
