@@ -46,6 +46,7 @@ if authentication_status == None:
 if authentication_status:
     # # ---- SIDEBAR ----
     st.sidebar.title(f"Welcome {name}")
+    st.write("# Welcome to SnowView!..")
 
     ###---- HIDE STREAMLIT STYLE ----
     hide_st_style = """
