@@ -15,7 +15,7 @@ fig = px.line(df, x="PIPELINE NAME", y="CREDITS CONSUMED", title='Credits Consum
 fig.update_xaxes(titlefont=dict(family='Rockwell',color='crimson',size=10),tickfont=dict(family='Rockwell', size=7))
 fig.update_yaxes(titlefont=dict(color='crimson',size=10))
 #fig.update_xaxes(tickangle=90)
-st.write(fig)
+#st.write(fig)
 
 my_cur1 = my_cnx.cursor() 
 my_cur1.execute("SELECT PIPELINE_START_TIME,CREDITS_CONSUMED_FOR_PIPELINE_EXECUTION FROM SNOWVIEW_AUDIT_VW ")
@@ -24,6 +24,7 @@ df1= pd.DataFrame(res1, columns=['PIPELINE START TIME','CREDITS CONSUMED'])
 fig1 = px.area(df1, x='PIPELINE START TIME', y='CREDITS CONSUMED',title='Credits Consumed over Time Period')
 fig1.update_xaxes(titlefont=dict(family='Rockwell',color='crimson',size=10),tickfont=dict(family='Rockwell', size=10))
 fig1.update_yaxes(titlefont=dict(color='crimson',size=10))
+st.write(fig)
 st.write(fig1)
 
 my_cur2 = my_cnx.cursor() 
