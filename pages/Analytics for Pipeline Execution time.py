@@ -18,8 +18,9 @@ st.write(fig)
 
 
 my_cur2 = my_cnx.cursor() 
-my_cur2.execute("SELECT CURRENT_USER(), CURRENT_ACCOUNT(), CURRENT_REGION()")
-my_cur2.execute("SELECT PIPELINE_NAME,PIPELINE_EXECUTION_TIME FROM SNOWVIEW_AUDIT_HISTORY ORDER BY PIPELINE_START_TIME DESC")
+#my_cur2.execute("SELECT CURRENT_USER(), CURRENT_ACCOUNT(), CURRENT_REGION()")
+my_cur2.execute("select * from pipeline_execution_time_vw")
+#my_cur2.execute("SELECT PIPELINE_NAME,PIPELINE_EXECUTION_TIME FROM SNOWVIEW_AUDIT_HISTORY ORDER BY PIPELINE_START_TIME DESC")
 res2 = my_cur2.fetchall()
 df2= pd.DataFrame(res2, columns=['Pipeline Name','Pipeline Execution Time (in seconds)'])
 fig1 = px.pie(df2, values='Pipeline Execution Time (in seconds)', names='Pipeline Name',title='Analytics for Pipeline Execution time')
@@ -28,7 +29,7 @@ fig1.update_layout(legend_title_text='Pipeline Names')
 fig1.update_layout(showlegend=True, legend=dict(
     title_font_family='Courier New',
     font=dict(
-        size=8
+        size=9
     )
 ))
 st.write(fig1)
