@@ -40,7 +40,7 @@ fig2.update_layout(legend_title_text='Pipeline Names')
 fig2.update_layout(showlegend=True, legend=dict(
     title_font_family='Courier New',
     font=dict(
-        size=9
+        size=10
     )
 ))
 st.write(fig2)
