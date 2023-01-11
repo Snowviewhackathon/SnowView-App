@@ -21,7 +21,7 @@ hide_bar= """
 """
 
 # --- USER AUTHENTICATION ---
-names = ["Aniket", "Venu","Pooja","Snowview_user"]
+names = ["Aniket", "Venu","Pooja","Snowview"]
 usernames = ["Aniket_S", "Venu_B","Pooja_M","Snowview"]
 
 # load hashed passwords
