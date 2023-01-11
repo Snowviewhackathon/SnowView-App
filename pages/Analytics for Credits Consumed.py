@@ -8,8 +8,8 @@ import pandas as pd
 my_cnx = snowflake.connector.connect(**st.secrets["snowflake"])
 
 my_cur = my_cnx.cursor() 
-my_cur.execute("select * from pipeline_credits_consumed_vw")
-#my_cur.execute("SELECT PIPELINE_NAME,SUM(CREDITS_CONSUMED_FOR_PIPELINE_EXECUTION) AS CREDITS_CONSUMED_FOR_PIPELINE_EXECUTION FROM SNOWVIEW_AUDIT_VW GROUP BY PIPELINE_NAME")
+#my_cur.execute("select * from pipeline_credits_consumed_vw")
+my_cur.execute("SELECT PIPELINE_NAME,SUM(CREDITS_CONSUMED_FOR_PIPELINE_EXECUTION) AS CREDITS_CONSUMED_FOR_PIPELINE_EXECUTION FROM SNOWVIEW_AUDIT_VW GROUP BY PIPELINE_NAME")
 res = my_cur.fetchall()
 df= pd.DataFrame(res, columns=['PIPELINE NAME','CREDITS CONSUMED'])
 fig = px.line(df, x="PIPELINE NAME", y="CREDITS CONSUMED", title='Credits Consumed by Pipelines')
