@@ -13,7 +13,7 @@ my_cur.execute("SELECT PIPELINE_NAME,SUM(CREDITS_CONSUMED_FOR_PIPELINE_EXECUTION
 res = my_cur.fetchall()
 df= pd.DataFrame(res, columns=['PIPELINE NAME','CREDITS CONSUMED'])
 fig = px.line(df, x="PIPELINE NAME", y="CREDITS CONSUMED", title='Credits Consumed by Pipelines')
-fig.update_xaxes(titlefont=dict(family='Rockwell',color='crimson',size=10),tickfont=dict(family='Rockwell', size=10))
+fig.update_xaxes(titlefont=dict(family='Rockwell',color='crimson',size=10),tickfont=dict(family='Rockwell', size=7))
 fig.update_yaxes(titlefont=dict(color='crimson',size=10))
 #fig.update_xaxes(tickangle=90)
 st.write(fig)
