@@ -14,5 +14,7 @@ df= pd.DataFrame(res, columns=['MONTH','CREDITS CONSUMED'])
 #fig.update_xaxes(titlefont=dict(family='Rockwell',color='crimson',size=10),tickfont=dict(family='Rockwell', size=7))
 #fig.update_yaxes(titlefont=dict(color='crimson',size=10))  
 
-fig = px.bar(df, x="MONTH", y="CREDITS CONSUMED")
+fig = px.bar(df, x="MONTH", y="CREDITS CONSUMED",  title="Month-level Credits Consumed Analytics")
+fig.update_xaxes(titlefont=dict(family='Rockwell',color='crimson',size=10),tickfont=dict(family='Rockwell', size=7))
+fig.update_yaxes(titlefont=dict(color='crimson',size=10))
 st.write(fig)
