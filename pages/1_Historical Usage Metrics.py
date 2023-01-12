@@ -117,13 +117,5 @@ st.download_button(
 )
 with st.spinner('Wait for it...'):
     time.sleep(5)
-###---- HIDE STREAMLIT STYLE ----
-hide_st_style = """
-            <style>
-            #MainMenu {visibility: hidden;}
-            footer {visibility: hidden;}
-            header {visibility: hidden;}
-            </style>
-            """
 st.dataframe(filter_dataframe(df))
 
