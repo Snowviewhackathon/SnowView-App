@@ -8,7 +8,7 @@ import pandas as pd
 my_cnx = snowflake.connector.connect(**st.secrets["snowflake"])
 
 my_cur = my_cnx.cursor() 
-my_cur.execute("SELECT PIPELINE_NAME,SUM(CREDITS_CONSUMED_FOR_PIPELINE_EXECUTION) AS CREDITS_CONSUMED_FOR_PIPELINE_EXECUTION FROM SNOWVIEW_AUDIT_VW GROUP BY PIPELINE_NAME")
+my_cur.execute("SELECT PIPELINE_NAME,SUM(CREDITS_CONSUMED_FOR_PIPELINE_EXECUTION) AS CREDITS_CONSUMED_FOR_PIPELINE_EXECUTION FROM SNOWVIEW_AUDIT_HISTORY GROUP BY PIPELINE_NAME")
 res = my_cur.fetchall()
 df= pd.DataFrame(res, columns=['PIPELINE NAME','CREDITS CONSUMED'])
 fig = px.line(df, x="PIPELINE NAME", y="CREDITS CONSUMED", title='Credits Consumed by Pipelines')
@@ -18,7 +18,7 @@ fig.update_yaxes(titlefont=dict(color='crimson',size=10))
 st.write(fig)
 
 #my_cur1 = my_cnx.cursor() 
-my_cur.execute("SELECT PIPELINE_START_TIME,CREDITS_CONSUMED_FOR_PIPELINE_EXECUTION FROM SNOWVIEW_AUDIT_VW ")
+my_cur.execute("SELECT PIPELINE_START_TIME,CREDITS_CONSUMED_FOR_PIPELINE_EXECUTION FROM SNOWVIEW_AUDIT_HISTORY ")
 res=my_cur.fetchall()
 df= pd.DataFrame(res, columns=['PIPELINE START TIME','CREDITS CONSUMED'])
 fig = px.area(df, x='PIPELINE START TIME', y='CREDITS CONSUMED',title='Credits Consumed over Time Period')
