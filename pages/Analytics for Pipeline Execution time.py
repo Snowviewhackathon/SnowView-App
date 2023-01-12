@@ -7,7 +7,7 @@ import plotly.express as px
 
 my_cnx = snowflake.connector.connect(**st.secrets["snowflake"])
 my_cur = my_cnx.cursor() 
-my_cur.execute("SELECT PIPELINE_NAME,SUM(PIPELINE_EXECUTION_TIME) AS PIPELINE_EXECUTION_TIME FROM SNOWVIEW_AUDIT_VW GROUP BY PIPELINE_NAME")
+my_cur.execute("SELECT PIPELINE_NAME,SUM(PIPELINE_EXECUTION_TIME) AS PIPELINE_EXECUTION_TIME FROM SNOWVIEW_AUDIT_HISTORY GROUP BY PIPELINE_NAME")
 res = my_cur.fetchall()
 df= pd.DataFrame(res, columns=['PIPELINE NAME','PIPELINE EXECUTION TIME(in seconds)'])
 fig = px.line(df, x="PIPELINE NAME", y="PIPELINE EXECUTION TIME(in seconds)", title='Analytics for Pipeline Execution time')
