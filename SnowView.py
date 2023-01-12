@@ -48,6 +48,6 @@ if authentication_status:
 
     ###---- HIDE STREAMLIT STYLE ----
     
-    st.markdown(hide_st_style, unsafe_allow_html=True)
+    #st.markdown(hide_st_style, unsafe_allow_html=True)
     authenticator.logout("Logout", "sidebar")
     st.snow()
